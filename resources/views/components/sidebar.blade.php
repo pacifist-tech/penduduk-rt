@@ -1,4 +1,4 @@
-<sidebar class="bg-slate-800 max-w-md min-w-min h-screen fixed justify-between shadow-md text-white p-10">
+<sidebar class="bg-slate-800 max-w-xs w-full h-screen justify-between shadow-md text-white p-10">
     <div class="mb-10">
         <h1>LOGO</h1>
     </div>

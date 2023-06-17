@@ -8,8 +8,11 @@
     @vite('resources/css/app.css')
 
 </head>
-<body class="font-sans">
+<body class="font-sans flex">
+
     @include('components.sidebar')
+    <main class="p-10">
     @yield('container')
+    </main>
 </body>
 </html>
