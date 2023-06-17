@@ -11,7 +11,7 @@ class ComposerServiceProvider extends ServiceProvider
     {
         View::composer('components.sidebar', function ($view) {
             $view->with('menus', [
-               [ "label" => "Penduduk", 'href'=> "penduduk"],
+               [ "label" => "Penduduk", 'href'=> "/"],
                 ["label"=> "Kelahiran", 'href'=> "kelahiran"],
                 ["label"=> "Kematian", 'href'=> "kematian"],
                 ["label"=> "Penduduk Pindah", 'href'=> "pindah"],
