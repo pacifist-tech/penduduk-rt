@@ -25,6 +25,9 @@ Route::get('/desa', function () {
 Route::get('/penduduk', function () {
     return view('penduduk');
 });
+Route::get('/penduduk/add', function () {
+    return view('penduduk.add');
+});
 Route::get('/kelahiran', function () {
     return view('kelahiran');
 });
