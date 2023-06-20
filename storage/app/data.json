@@ -1,0 +1,204 @@
+[
+	{
+		"type": "text",
+		"label": "Nama Lengkap",
+		"description": "Nama Lengkap Sesuai Akta",
+		"name": "name",
+		"placeholder": "Asep Surasep",
+		"autocomplete": "name"
+	},
+	{
+		"type": "select",
+		"label": "Jenis Kelamin",
+		"description": "Nama Lengkap Sesuai Akta",
+		"name": "jenis_kelamin",
+		"options": [
+			{ "label": "01. Laki-laki", "value": 1 },
+			{ "label": "02. Perempuan", "value": 2 }
+		]
+	},
+	{
+		"type": "select",
+		"label": "Gelar",
+		"description": "Gelar yang didapat",
+		"name": "gelar",
+		"options": [
+			{ "label": "00. Tanpa Gelar", "value": 0 },
+			{ "label": "01. Gelar Akademis", "value": 1 },
+			{ "label": "02. Gelar Kebangsaan", "value": 2 },
+			{ "label": "03. Gelar Keagamaan", "value": 3 }
+		]
+	},
+	{
+		"type": "text",
+		"label": "Nomor KTP",
+		"description": "Kosongkan bila tidak ada",
+		"name": "no_ktp",
+		"placeholder": "32010101..."
+	},
+	{
+		"type": "textarea",
+		"label": "Alamat Sebelumnya",
+		"description": "Kosongkan bila tidak ada",
+		"name": "alamat_sebelumnya",
+		"placeholder": "32010101...",
+		"class": "col-span-2",
+		"autocomplete": "address-level1"
+	},
+	{
+		"type": "hr"
+	},
+	{
+		"type": "text",
+		"label": "Tempat Lahir",
+		"name": "tempat_lahir",
+		"placeholder": "Bogor"
+	},
+	{
+		"type": "text",
+		"label": "Tanggal Lahir",
+		"name": "tanggal_lahir",
+		"description": "format DDMMYYYY",
+		"placeholder": "01012000"
+	},
+	{
+		"type": "select",
+		"label": "Akta Lahir",
+		"name": "akta_lahir",
+		"options": [
+			{ "label": "01. Tidak Ada", "value": 1 },
+			{ "label": "02. Ada", "value": 2 }
+		]
+	},
+	{
+		"type": "text",
+		"label": "Nomor Akta Lahir",
+		"name": "no_akte_lahir",
+		"description": "format DDMMYYYY",
+		"placeholder": "01012000"
+	},
+	{
+		"type": "hr"
+	},
+	{
+		"type": "select",
+		"label": "Golongan Darah",
+		"name": "golongan_darah",
+		"options": [
+			{ "label": "01. A", "value": 1 },
+			{ "label": "02. B", "value": 2 },
+			{ "label": "03. AB", "value": 3 },
+			{ "label": "04. O", "value": 4 },
+			{ "label": "05. A", "value": 5 },
+			{ "label": "06. A", "value": 6 },
+			{ "label": "07. B", "value": 7 },
+			{ "label": "08. B", "value": 8 },
+			{ "label": "09. AB", "value": 9 },
+			{ "label": "10. AB", "value": 10 },
+			{ "label": "11. O", "value": 11 },
+			{ "label": "12. O", "value": 12 },
+			{ "label": "13. Tidak Tahu", "value": 13 }
+		]
+	},
+	{
+		"type": "select",
+		"label": "Agama",
+		"name": "agama",
+		"options": [
+			{ "label": "01. Islam", "value": 1 },
+			{ "label": "02. Kristen", "value": 2 },
+			{ "label": "03. Katholik", "value": 3 },
+			{ "label": "04. Hindu", "value": 4 },
+			{ "label": "05. Budha", "value": 5 },
+			{ "label": "06. Kong Hucu", "value": 6 }
+		]
+	},
+	{
+		"type": "select",
+		"label": "Status perkawinan",
+		"name": "status_perkawinan",
+		"options": [
+			{ "label": "01. Belum Kawin", "value": 1 },
+			{ "label": "02. Kawin", "value": 2 },
+			{ "label": "03. Cerai Hidup", "value": 3 },
+			{ "label": "04. Cerai Mati", "value": 4 }
+		]
+	},
+	{
+		"type": "select",
+		"label": "Akta Perkawinan",
+		"name": "akta_perkawinan",
+		"options": [
+			{ "label": "01. Tidak Ada", "value": 1 },
+			{ "label": "02. Ada", "value": 2 }
+		]
+	},
+	{
+		"type": "select",
+		"label": "Kelainan Fisik dan Mental",
+		"name": "kelainan",
+		"options": [
+			{ "label": "01. Tidak Ada", "value": 1 },
+			{ "label": "02. Ada", "value": 2 }
+		]
+	},
+	{
+		"type": "select",
+		"label": "Jenis Cacat (Jik ada)",
+		"name": "kelainan",
+		"options": [
+			{ "label": "00. Tidak Cacat", "value": 1 },
+			{ "label": "01. Cacat Fisik", "value": 2 },
+			{ "label": "02. Cacat Netra/Buta", "value": 3 },
+			{ "label": "03. Cacat Rungu/Wicara", "value": 4 },
+			{ "label": "04. Cacat Mental/Jiwa", "value": 5 },
+			{ "label": "05. Cacat Fisik dan Mental", "value": 6 },
+			{ "label": "06. Cacat Lainnya", "value": 7 }
+		]
+	},
+	{
+		"type": "select",
+		"label": "Pendidikan Terakhir",
+		"name": "kelainan",
+		"options": [
+			{ "label": "01. TAMAT SD / SEDERAJAT", "value": 1 },
+			{ "label": "02. TIDAK / BELUM SEKOLAH", "value": 2 },
+			{ "label": "03. SLTA / SEDERAJAT", "value": 3 },
+			{ "label": "04. SLTP/SEDERAJAT", "value": 4 },
+			{ "label": "05. BELUM TAMAT SD/SEDERAJAT", "value": 5 },
+			{ "label": "06. DIPLOMA IV/ STRATA I", "value": 6 },
+			{ "label": "07. AKADEMI/ DIPLOMA III/S. MUDA", "value": 7 },
+			{ "label": "08. DIPLOMA I / II", "value": 8 },
+			{ "label": "09. STRATA II", "value": 9 },
+			{ "label": "10. STRATA III", "value": 10 }
+		]
+	},
+	{
+		"type": "hr"
+	},
+	{
+		"type": "text",
+		"label": "NIK Ibu",
+		"name": "nik_ibu",
+		"placeholder": "320210101..."
+	},
+	{
+		"type": "text",
+		"label": "Nama Lengkap Ibu",
+		"name": "nama_ibu",
+		"placeholder": "Ani Suryani"
+	},
+	{
+		"type": "text",
+		"label": "NIK Ayah",
+		"name": "nik_ayah",
+		"placeholder": "320210101..."
+	},
+
+	{
+		"type": "text",
+		"label": "Nama Lengkap AYah",
+		"name": "nama_ibu",
+		"placeholder": "Ani Suryani"
+	}
+]

@@ -35,6 +35,10 @@ Route::get('/kelahiran/add', function () {
     return view('kelahiran.kelahiran-add');
 });
 
+Route::get('/kematian/add', function () {
+    return view('kematian.kematian-add');
+});
+
 Route::post('/penduduk/add', function (Request $request) {
     $body = $request->body();
     return redirect('/');
@@ -48,8 +52,9 @@ Route::get('/kelahiran', function () {
 });
 
 Route::get('/kematian', function () {
-    return view('kematian');
+    return view('kematian.index', ['title' => 'Kematian', 'menus' => [['label' => 'Add', 'color' => 'green', 'href' => '/kematian/add']]]);
 });
+
 Route::get('/pindah', function () {
     return view('pindah');
 });

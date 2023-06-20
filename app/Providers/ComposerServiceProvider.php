@@ -18,6 +18,10 @@ class ComposerServiceProvider extends ServiceProvider
         return self::turnJson('kelahiran.json');
     }
 
+    private static function kematian(){
+        return self::turnJson('kematian.json');
+    }
+
     private static function turnJson($input){
         $jsonData = Storage::get($input);
         $data = json_decode($jsonData, true);
@@ -36,6 +40,10 @@ class ComposerServiceProvider extends ServiceProvider
 
         View::composer('kelahiran.kelahiran-add', function ($view) {
             $view->with('inputs', self::kelahiran());
+        });
+
+        View::composer('kematian.kematian-add', function ($view) {
+            $view->with('inputs', self::kematian());
         });
     }
 }

@@ -1,0 +1,498 @@
+[
+	{
+		"type": "text",
+		"label": "Nama Lengkap",
+		"description": "Nama Lengkap Sesuai Akta",
+		"name": "name",
+		"placeholder": "Asep Surasep",
+		"autocomplete": "name"
+	},
+	{
+		"type": "select",
+		"label": "Jenis Kelamin",
+		"description": "Nama Lengkap Sesuai Akta",
+		"name": "jenis_kelamin",
+		"options": [
+			{ "label": "01. Laki-laki", "value": 1 },
+			{ "label": "02. Perempuan", "value": 2 }
+		]
+	},
+	{
+		"type": "text",
+		"label": "Tempat Lahir",
+		"name": "tempat_lahir",
+		"placeholder": "Bogor"
+	},
+
+	{
+		"type": "text",
+		"label": "Tanggal Lahir",
+		"name": "tanggal_lahir",
+		"description": "format DDMMYYYY",
+		"placeholder": "01012000"
+	},
+	{
+		"type": "number",
+		"label": "Umur",
+		"name": "umur",
+		"description": "Umur saat meninggal dunia",
+		"placeholder": "65"
+	},
+	{
+		"type": "select",
+		"label": "Agama",
+		"name": "agama",
+		"options": [
+			{ "label": "01. Islam", "value": 1 },
+			{ "label": "02. Kristen", "value": 2 },
+			{ "label": "03. Katholik", "value": 3 },
+			{ "label": "04. Hindu", "value": 4 },
+			{ "label": "05. Budha", "value": 5 },
+			{ "label": "06. Kong Hucu", "value": 6 }
+		]
+	},
+	{
+		"type": "select",
+		"label": "Pekerjaan",
+		"name": "pekerjaan",
+		"options": []
+	},
+	{
+		"type": "text",
+		"label": "Alamat",
+		"name": "alamat",
+		"description": "Alamat tempat tinggal",
+		"placeholder": "Gg. Nangka No 5"
+	},
+	{
+		"type": "text",
+		"label": "Desa/Kelurahan",
+		"name": "des",
+		"placeholder": "Desa Sukamaju"
+	},
+	{
+		"type": "text",
+		"label": "Kecamatan",
+		"name": "kecamatan",
+		"placeholder": "Kecamatan Hilir"
+	},
+	{
+		"type": "text",
+		"label": "Kabupaten/Kota",
+		"name": "kabupaten",
+		"placeholder": "Kabupaten Bogor"
+	},
+	{
+		"type": "text",
+		"label": "Provinsi",
+		"name": "provinsi",
+		"placeholder": "Jawa Barat"
+	},
+	{
+		"type": "number",
+		"label": "Anak ke",
+		"name": "anak_ke",
+		"placeholder": "1"
+	},
+	{
+		"type": "number",
+		"label": "Tanggal Kematian",
+		"name": "tanggal_kematian",
+		"description": "format DDMMYYYY",
+		"placeholder": "01012000"
+	},
+	{
+		"type": "number",
+		"label": "Waktu Kematian",
+		"name": "waktu_kematian",
+		"description": "format HHMM",
+		"placeholder": "1420"
+	},
+	{
+		"type": "select",
+		"label": "Sebab Kematian",
+		"name": "sebab_kematian",
+		"options": [
+			{ "label": "01. Sakit biasa / tua", "value": 1 },
+			{ "label": "02. Wabah Penyakit", "value": 2 },
+			{ "label": "03. Kecelakaan", "value": 3 },
+			{ "label": "04. Kriminalitas", "value": 4 },
+			{ "label": "05. Bunuh Diri", "value": 5 },
+			{ "label": "06. Lainnya", "value": 6 }
+		]
+	},
+	{
+		"type": "text",
+		"label": "Tempat Kematian",
+		"name": "tempat_kematian",
+		"placeholder": "Rumah"
+	},
+	{
+		"type": "select",
+		"label": "Yang Menerangkan",
+		"name": "yang_menerangkan",
+		"options": [
+			{ "label": "01. Dokter", "value": 1 },
+			{ "label": "02. Tenaga Kesehatan", "value": 2 },
+			{ "label": "03. Kepolisian", "value": 3 },
+			{ "label": "04. Lainnya", "value": 4 }
+		]
+	},
+	{
+		"type": "hr"
+	},
+	{
+		"type": "number",
+		"label": "NIK Ibu",
+		"name": "nik_ibu",
+		"placeholder": "3210101"
+	},
+	{
+		"type": "text",
+		"label": "Nama Lengkap Ibu",
+		"name": "nama_ibu",
+		"placeholder": "Ani Suryaningsih"
+	},
+	{
+		"type": "text",
+		"label": "Tanggal Lahir Ibu",
+		"name": "tanggal_lahir_ibu",
+		"placeholder": "140599"
+	},
+	{
+		"type": "number",
+		"label": "Umur Ibu",
+		"name": "umur_ibu",
+		"placeholder": "21"
+	},
+
+	{
+		"type": "select",
+		"label": "Pekerjaan Ibu",
+		"name": "pekerjaan_ibu",
+		"options": []
+	},
+	{
+		"type": "text",
+		"label": "Alamat Ibu",
+		"name": "alamat_ibu",
+		"placeholder": "Gg. Nangka No 5"
+	},
+	{
+		"type": "text",
+		"label": "Desa/Kelurahan Ibu",
+		"name": "des_ibu",
+		"placeholder": "Desa Sukamaju"
+	},
+	{
+		"type": "text",
+		"label": "Kecamatan Ibu",
+		"name": "kecamatan_ibu",
+		"placeholder": "Kecamatan Hilir"
+	},
+	{
+		"type": "text",
+		"label": "Kabupaten/Kota Ibu",
+		"name": "kabupaten_ibu",
+		"placeholder": "Kabupaten Bogor"
+	},
+	{
+		"type": "text",
+		"label": "Provinsi Ibu",
+		"name": "provinsi_ibu",
+		"placeholder": "Jawa Barat"
+	},
+	{
+		"type": "select",
+		"label": "Kewarganegaraan Ibu",
+		"name": "kewarganegaraan_ibu",
+		"options": [
+			{ "label": "01. WNI", "value": 1 },
+			{ "label": "02. WNA", "value": 2 }
+		]
+	},
+	{
+		"type": "text",
+		"label": "Kebangsaan Ibu",
+		"name": "kebangsaan_ibu",
+		"placeholder": "Indonesia"
+	},
+	{
+		"type": "hr"
+	},
+	{
+		"type": "number",
+		"label": "NIK ayah",
+		"name": "nik_ayah",
+		"placeholder": "3210101"
+	},
+	{
+		"type": "text",
+		"label": "Nama Lengkap ayah",
+		"name": "nama_ayah",
+		"placeholder": "Ani Suryaningsih"
+	},
+	{
+		"type": "text",
+		"label": "Tanggal Lahir ayah",
+		"name": "tanggal_lahir_ayah",
+		"placeholder": "140599"
+	},
+	{
+		"type": "number",
+		"label": "Umur ayah",
+		"name": "umur_ayah",
+		"placeholder": "21"
+	},
+
+	{
+		"type": "select",
+		"label": "Pekerjaan ayah",
+		"name": "pekerjaan_ayah",
+		"options": []
+	},
+	{
+		"type": "text",
+		"label": "Alamat ayah",
+		"name": "alamat_ayah",
+		"placeholder": "Gg. Nangka No 5"
+	},
+	{
+		"type": "text",
+		"label": "Desa/Kelurahan ayah",
+		"name": "des_ayah",
+		"placeholder": "Desa Sukamaju"
+	},
+	{
+		"type": "text",
+		"label": "Kecamatan ayah",
+		"name": "kecamatan_ayah",
+		"placeholder": "Kecamatan Hilir"
+	},
+	{
+		"type": "text",
+		"label": "Kabupaten/Kota ayah",
+		"name": "kabupaten_ayah",
+		"placeholder": "Kabupaten Bogor"
+	},
+	{
+		"type": "text",
+		"label": "Provinsi ayah",
+		"name": "provinsi_ayah",
+		"placeholder": "Jawa Barat"
+	},
+	{
+		"type": "select",
+		"label": "Kewarganegaraan ayah",
+		"name": "kewarganegaraan_ayah",
+		"options": [
+			{ "label": "01. WNI", "value": 1 },
+			{ "label": "02. WNA", "value": 2 }
+		]
+	},
+	{
+		"type": "text",
+		"label": "Kebangsaan ayah",
+		"name": "kebangsaan_ayah",
+		"placeholder": "Indonesia"
+	},
+	{
+		"type": "hr"
+	},
+	{
+		"type": "number",
+		"label": "NIK pelapor",
+		"name": "nik_pelapor",
+		"placeholder": "3210101"
+	},
+	{
+		"type": "text",
+		"label": "Nama Lengkap pelapor",
+		"name": "nama_pelapor",
+		"placeholder": "Ani Suryaningsih"
+	},
+
+	{
+		"type": "number",
+		"label": "Umur pelapor",
+		"name": "umur_pelapor",
+		"placeholder": "21"
+	},
+	{
+		"type": "select",
+		"label": "Jenis Kelamin",
+		"name": "jenis_kelamin_pelapor",
+		"options": [
+			{ "label": "01. Laki-Laki", "value": 1 },
+			{ "label": "02. Perempuan", "value": 2 }
+		]
+	},
+	{
+		"type": "select",
+		"label": "Pekerjaan pelapor",
+		"name": "pekerjaan_pelapor",
+		"options": []
+	},
+	{
+		"type": "text",
+		"label": "Alamat pelapor",
+		"name": "alamat_pelapor",
+		"placeholder": "Gg. Nangka No 5"
+	},
+	{
+		"type": "text",
+		"label": "Desa/Kelurahan pelapor",
+		"name": "des_pelapor",
+		"placeholder": "Desa Sukamaju"
+	},
+	{
+		"type": "text",
+		"label": "Kecamatan pelapor",
+		"name": "kecamatan_pelapor",
+		"placeholder": "Kecamatan Hilir"
+	},
+	{
+		"type": "text",
+		"label": "Kabupaten/Kota pelapor",
+		"name": "kabupaten_pelapor",
+		"placeholder": "Kabupaten Bogor"
+	},
+	{
+		"type": "text",
+		"label": "Provinsi pelapor",
+		"name": "provinsi_pelapor",
+		"placeholder": "Jawa Barat"
+	},
+	{
+		"type": "hr"
+	},
+	{
+		"type": "number",
+		"label": "NIK saksi 1",
+		"name": "nik_saksi_1",
+		"placeholder": "3210101"
+	},
+	{
+		"type": "text",
+		"label": "Nama Lengkap saksi 1",
+		"name": "nama_saksi_1",
+		"placeholder": "Ani Suryaningsih"
+	},
+	{
+		"type": "number",
+		"label": "Umur saksi 1",
+		"name": "umur_saksi_1",
+		"placeholder": "21"
+	},
+	{
+		"type": "select",
+		"label": "Jenis Kelamin Saksi 1",
+		"name": "jenis_kelamin_saksi_1",
+		"options": [
+			{ "label": "01. Laki-Laki", "value": 1 },
+			{ "label": "02. Perempuan", "value": 2 }
+		]
+	},
+	{
+		"type": "select",
+		"label": "Pekerjaan Saksi 1",
+		"name": "pekerjaan_saksi_1",
+		"options": []
+	},
+	{
+		"type": "text",
+		"label": "Alamat Saksi 1",
+		"name": "alamat_saksi_1",
+		"placeholder": "Gg. Nangka No 5"
+	},
+	{
+		"type": "text",
+		"label": "Desa/Kelurahan saksi 1",
+		"name": "des_saksi_1",
+		"placeholder": "Desa Sukamaju"
+	},
+	{
+		"type": "text",
+		"label": "Kecamatan saksi 1",
+		"name": "kecamatan_saksi_1",
+		"placeholder": "Kecamatan Hilir"
+	},
+	{
+		"type": "text",
+		"label": "Kabupaten/Kota saksi 1",
+		"name": "kabupaten_saksi_1",
+		"placeholder": "Kabupaten Bogor"
+	},
+	{
+		"type": "text",
+		"label": "Provinsi saksi 1",
+		"name": "provinsi_saksi_1",
+		"placeholder": "Jawa Barat"
+	},
+	{
+		"type": "hr"
+	},
+	{
+		"type": "number",
+		"label": "NIK saksi 2",
+		"name": "nik_saksi_2",
+		"placeholder": "3210101"
+	},
+	{
+		"type": "text",
+		"label": "Nama Lengkap saksi 2",
+		"name": "nama_saksi_2",
+		"placeholder": "Ani Suryaningsih"
+	},
+	{
+		"type": "number",
+		"label": "Umur saksi 2",
+		"name": "umur_saksi_2",
+		"placeholder": "21"
+	},
+	{
+		"type": "select",
+		"label": "Jenis Kelamin Saksi 2",
+		"name": "jenis_kelamin_saksi_2",
+		"options": [
+			{ "label": "01. Laki-Laki", "value": 1 },
+			{ "label": "02. Perempuan", "value": 2 }
+		]
+	},
+	{
+		"type": "select",
+		"label": "Pekerjaan Saksi 2",
+		"name": "pekerjaan_saksi_2",
+		"options": []
+	},
+	{
+		"type": "text",
+		"label": "Alamat Saksi 2",
+		"name": "alamat_saksi_2",
+		"placeholder": "Gg. Nangka No 5"
+	},
+	{
+		"type": "text",
+		"label": "Desa/Kelurahan saksi 2",
+		"name": "des_saksi_2",
+		"placeholder": "Desa Sukamaju"
+	},
+	{
+		"type": "text",
+		"label": "Kecamatan saksi 2",
+		"name": "kecamatan_saksi_2",
+		"placeholder": "Kecamatan Hilir"
+	},
+	{
+		"type": "text",
+		"label": "Kabupaten/Kota saksi 2",
+		"name": "kabupaten_saksi_2",
+		"placeholder": "Kabupaten Bogor"
+	},
+	{
+		"type": "text",
+		"label": "Provinsi saksi 2",
+		"name": "provinsi_saksi_2",
+		"placeholder": "Jawa Barat"
+	}
+]
