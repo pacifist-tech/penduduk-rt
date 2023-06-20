@@ -1,4 +1,4 @@
-<sidebar class="bg-blue-950 max-w-xs w-full h-screen justify-between shadow-md text-white p-10">
+<sidebar class="bg-blue-950 max-w-xs w-full h-screen justify-between shadow-md text-white p-10 top-0 sticky">
     <div class="mb-10">
         <h1>LOGO</h1>
     </div>
