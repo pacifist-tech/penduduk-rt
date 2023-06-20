@@ -30,8 +30,7 @@
                                     <span class="error text-xs text-red-500">{{ $message }}</span>
                                 @enderror
                             @else
-                                <input  
-                                        autocomplete="{{ Utils::replaceValue($input, 'autocomplete') }}"
+                                <input autocomplete="{{ Utils::replaceValue($input, 'autocomplete') }}"
                                     class="rounded-md border py-2 px-3" name="{{ Utils::replaceValue($input, 'name') }}"
                                     placeholder="{{ Utils::replaceValue($input, 'placeholder') }}" />
                                 @error($input['name'])

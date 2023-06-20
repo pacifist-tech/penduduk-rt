@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Storage;
 
 class ComposerServiceProvider extends ServiceProvider
 {
-    private static $lol = [['label' => 'Penduduk', 'href' => '/'], ['label' => 'Kelahiran', 'href' => '/kelahiran'], ['label' => 'Kematian', 'href' => 'kematian'], ['label' => 'Penduduk Pindah', 'href' => 'pindah'], ['label' => 'Penduduk Datang', 'href' => 'datang']];
+    private static $lol = [['label' => 'Penduduk', 'href' => '/'], ['label' => 'Kelahiran', 'href' => '/kelahiran'], ['label' => 'Kematian', 'href' => '/kematian'], ['label' => 'Penduduk Pindah', 'href' => '/pindah'], ['label' => 'Penduduk Datang', 'href' => '/datang']];
 
     private static function penduduk(){
         return self::turnJson('data.json');
@@ -20,6 +20,10 @@ class ComposerServiceProvider extends ServiceProvider
 
     private static function kematian(){
         return self::turnJson('kematian.json');
+    }
+
+    private static function pindah(){
+        return self::turnJson('pindah.json');
     }
 
     private static function turnJson($input){
@@ -44,6 +48,10 @@ class ComposerServiceProvider extends ServiceProvider
 
         View::composer('kematian.kematian-add', function ($view) {
             $view->with('inputs', self::kematian());
+        });
+
+        View::composer('pindah.add', function ($view) {
+            $view->with('inputs', self::pindah());
         });
     }
 }

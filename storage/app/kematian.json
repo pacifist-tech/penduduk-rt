@@ -1,5 +1,12 @@
 [
 	{
+		"type": "number",
+		"label": "NIK",
+		"description": "Nomor Induk Kependudukan",
+		"name": "nik",
+		"placeholder": "32010101"
+	},
+	{
 		"type": "text",
 		"label": "Nama Lengkap",
 		"description": "Nama Lengkap Sesuai Akta",

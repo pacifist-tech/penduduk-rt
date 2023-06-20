@@ -1,0 +1,285 @@
+[
+	{
+		"type": "number",
+		"label": "No. KK",
+		"description": "Nomor dalam Kartu keluarga",
+		"name": "no_kk",
+		"placeholder": "32010101"
+	},
+	{
+		"type": "number",
+		"label": "NIK",
+		"description": "Nomor Induk Kependudukan",
+		"name": "nik",
+		"placeholder": "32010101"
+	},
+	{
+		"type": "text",
+		"label": "Nama Lengkap Pemohon",
+		"description": "Nama Lengkap Sesuai Akta Kelahiran",
+		"name": "name",
+		"placeholder": "Asep Surasep",
+		"autocomplete": "name"
+	},
+	{
+		"type": "select",
+		"label": "Jenis Permohonan",
+		"name": "jenis_permohonan",
+		"options": [
+			{ "label": "01. Surat Keterangan Pindah", "value": 1 },
+			{
+				"label": "02. Surat Keterangan Pindah Luar Negeri (LN)",
+				"value": 2
+			},
+			{
+				"label": "03. Surat Keterangan Tempat Tinggal Bagi Orang Asing Terbatas",
+				"value": 3
+			}
+		]
+	},
+	{
+		"type": "select",
+		"label": "Klasifikasi Kepindahan",
+		"name": "klasifikasi_kepindahan",
+		"options": [
+			{
+				"label": "01. Datam satu desa/kelurahan atau yang disebut dengan nama lain",
+				"value": 1
+			},
+			{
+				"label": "02. Antardesa/kelurahan atau yang disebut dengan nama lain dalam satu kecamatan",
+				"value": 2
+			},
+			{
+				"label": "03. Antar kecamatan atau yang disebut dengan nama lain dalam satu kabupaten/kota",
+				"value": 3
+			},
+			{ "label": "04. Kriminalitas", "value": 4 },
+			{
+				"label": "05. Antarkabunsten/kota dalam satu provinsi",
+				"value": 5
+			},
+			{ "label": "06. Antar Provinsi", "value": 6 }
+		]
+	},
+	{
+		"type": "hr"
+	},
+	{
+		"type": "text",
+		"label": "Alamat Asal",
+		"name": "alamat_asal",
+		"description": "Alamat tempat tinggal",
+		"placeholder": "Gg. Nangka No 5"
+	},
+	{
+		"type": "number",
+		"label": "RT",
+		"name": "alamat_asal_rt",
+		"description": "Rukun Tetangga",
+		"placeholder": "08"
+	},
+	{
+		"type": "number",
+		"label": "RW",
+		"name": "alamat_asal_rw",
+		"description": "Rukun Warga",
+		"placeholder": "08"
+	},
+	{
+		"type": "text",
+		"label": "Desa/Kelurahan",
+		"name": "alamat_asal_desa",
+		"placeholder": "Desa Sukamaju"
+	},
+	{
+		"type": "text",
+		"label": "Kecamatan",
+		"name": "alamat_asal_kecamatan",
+		"placeholder": "Kecamatan Hilir"
+	},
+	{
+		"type": "text",
+		"label": "Kabupaten/Kota",
+		"name": "alamat_asal_kabupaten",
+		"placeholder": "Kabupaten Bogor"
+	},
+	{
+		"type": "text",
+		"label": "Provinsi",
+		"name": "alamat_asal_provinsi",
+		"placeholder": "Jawa Barat"
+	},
+	{
+		"type": "number",
+		"label": "Kode POS",
+		"name": "alamat_asal_kode_pos",
+		"placeholder": "16916",
+		"autocomplete": "zip"
+	},
+	{
+		"type": "hr"
+	},
+	{
+		"type": "text",
+		"label": "Alamat Tujuan",
+		"name": "alamat_tujuan",
+		"description": "Alamat tempat tinggal tujuan",
+		"placeholder": "Gg. Nangka No 5"
+	},
+	{
+		"type": "number",
+		"label": "RT",
+		"name": "alamat_tujuan_rt",
+		"description": "Rukun Tetangga",
+		"placeholder": "08"
+	},
+	{
+		"type": "number",
+		"label": "RW",
+		"name": "alamat_tujuan_rw",
+		"description": "Rukun Warga",
+		"placeholder": "08"
+	},
+	{
+		"type": "text",
+		"label": "Desa/Kelurahan",
+		"name": "alamat_tujuan_desa",
+		"placeholder": "Desa Sukamaju"
+	},
+	{
+		"type": "text",
+		"label": "Kecamatan",
+		"name": "alamat_tujuan_kecamatan",
+		"placeholder": "Kecamatan Hilir"
+	},
+	{
+		"type": "text",
+		"label": "Kabupaten/Kota",
+		"name": "alamat_tujuan_kabupaten",
+		"placeholder": "Kabupaten Bogor"
+	},
+	{
+		"type": "text",
+		"label": "Provinsi",
+		"name": "alamat_tujuan_provinsi",
+		"placeholder": "Jawa Barat"
+	},
+	{
+		"type": "number",
+		"label": "Kode POS",
+		"name": "alamat_tujuan_kode_pos",
+		"placeholder": "16916",
+		"autocomplete": "zip"
+	},
+
+	{
+		"type": "select",
+		"label": "Alasan Pindah",
+		"name": "alasan_pindah",
+		"options": [
+			{ "label": "01. Pekerjaan", "value": 1 },
+			{ "label": "02. Pendidikan", "value": 2 },
+			{ "label": "03. Keamanan", "value": 3 },
+			{ "label": "04. Kesehatan", "value": 4 }
+		]
+	},
+	{
+		"type": "select",
+		"label": "Jenis Pindah",
+		"name": "jenis_pindah",
+		"options": [
+			{ "label": "01. Kepala Keluarga", "value": 1 },
+			{
+				"label": "02. Kepala Keluarga dan Seluruh Anggota Keluarga",
+				"value": 2
+			},
+			{
+				"label": "03. Kepala Keluarga dan Sebagian Anggota Keluarga",
+				"value": 3
+			},
+			{ "label": "04. Anggota Keluarga", "value": 4 }
+		]
+	},
+	{
+		"type": "select",
+		"label": "Anggota Keluarga Tidak Pindah",
+		"name": "anggota_keluarga_tidak_pindah",
+		"options": [
+			{ "label": "01. Numpang KK", "value": 1 },
+			{ "label": "02. Membuat KK Baru", "value": 2 }
+		]
+	},
+	{
+		"type": "select",
+		"label": "Anggota Keluarga yang Pindah",
+		"name": "anggota_keluarga_yang_pindah",
+		"options": [
+			{ "label": "01. Numpang KK", "value": 1 },
+			{ "label": "02. Membuat KK Baru", "value": 2 }
+		]
+	},
+	{
+		"type": "text",
+		"label": "Nama Sponsor",
+		"name": "nama_sponsor",
+		"placeholder": "PT. Aksara Ardana",
+		"description": "Kosongkan bila tidak ada sponsor"
+	},
+	{
+		"type": "select",
+		"label": "Tipe Sponsor",
+		"name": "tipe_sponsor",
+		"options": [
+			{ "label": "01. Organisasi Internasional", "value": 1 },
+			{ "label": "02. Perorangan", "value": 2 },
+			{ "label": "03. Pemerintah", "value": 3 },
+			{ "label": "04. Tanpa Sponsor", "value": 3 }
+		]
+	},
+	{
+		"type": "text",
+		"label": "Alamat Sponsor",
+		"name": "alamat_sponsor",
+		"placeholder": "Jl. Gunung Agung No. 123"
+	},
+	{
+		"type": "number",
+		"label": "Nomor KITAS & KITAP",
+		"name": "no_kitas"
+	},
+	{
+		"type": "number",
+		"label": "Tanggal Masa Berlaku KITAS & KITAP",
+		"name": "tanggal_kitas",
+		"placeholder": "230623",
+		"description": "format DDMMYY"
+	},
+	{ "type": "hr" },
+
+	{
+		"type": "text",
+		"label": "Negara Tujuan",
+		"name": "nama_negara_tujuan",
+		"placeholder": "Amerika Serikat"
+	},
+	{
+		"type": "text",
+		"label": "Alamat Negara Tujuan",
+		"name": "alamat_negara_tujuan",
+		"placeholder": "Regent Park No. 1, UK"
+	},
+	{
+		"type": "text",
+		"label": "Penanggung Jawab",
+		"name": "nama_penanggung_jawab",
+		"placeholder": "Robert Patinson"
+	},
+	{
+		"type": "text",
+		"label": "Rencana Tanggal Pindah",
+		"name": "rencana_tanggal_pindah",
+		"placeholder": "260623",
+		"description": "format DDMMYY"
+	}
+]
