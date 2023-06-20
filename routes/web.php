@@ -31,15 +31,20 @@ Route::get('/penduduk/add', function () {
     return view('penduduk.add');
 });
 
+Route::get('/kelahiran/add', function () {
+    return view('kelahiran.kelahiran-add');
+});
+
 Route::post('/penduduk/add', function (Request $request) {
     $body = $request->body();
     return redirect('/');
 });
+
 Route::post('/submit-form', [FormController::class, 'submit'])->name('form.submit');
 
 
 Route::get('/kelahiran', function () {
-    return view('kelahiran');
+    return view('kelahiran', ['title' => 'Kelahiran', 'menus' => [['label' => 'Add', 'color' => 'green', 'href' => '/kelahiran/add']]]);
 });
 
 Route::get('/kematian', function () {
