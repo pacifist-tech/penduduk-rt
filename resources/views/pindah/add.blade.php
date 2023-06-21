@@ -7,7 +7,6 @@
     <section class="rounded-2xl bg-white p-6">
         <form action="{{ route('form.submit') }}" class="grid grid-cols-2 gap-6 text-sm" method="POST">
             @csrf
-
             @if (isset($inputs))
                 @foreach ($inputs as $input)
                     @if ($input['type'] == 'hr')
@@ -25,14 +24,14 @@
                             @elseif ($input['type'] == 'textarea')
                                 <textarea autocomplete="{{ Utils::replaceValue($input, 'autocomplete') }}"
                                     class="{{"rounded-md border py-2 px-3 col-span-2 ". Utils::replaceValue($input, 'class')}}" name="{{ Utils::replaceValue($input, 'name') }}"
-                                    placeholder="{{ Utils::replaceValue($input, 'placeholder') }}" ></textarea>
+                                    placeholder="{{ Utils::replaceValue($input, 'placeholder') }}" value="{{ old($input['name']) }}"></textarea>
                                 @error($input['name'])
                                     <span class="error text-xs text-red-500">{{ $message }}</span>
                                 @enderror
                             @else
                                 <input autocomplete="{{ Utils::replaceValue($input, 'autocomplete') }}"
                                     class="rounded-md border py-2 px-3" name="{{ Utils::replaceValue($input, 'name') }}"
-                                    placeholder="{{ Utils::replaceValue($input, 'placeholder') }}" />
+                                    placeholder="{{ Utils::replaceValue($input, 'placeholder') }}" value="{{ old($input['name']) }}/>
                                 @error($input['name'])
                                     <span class="error text-xs text-red-500">{{ $message }}</span>
                                 @enderror

@@ -12,10 +12,14 @@ class FormController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'nama_lengkap' => 'required|string|max:255',
+            // 'nik'=> 'required|numeric|min:16|max:16',
+            'tempat_lahir'=> 'required|string|max:50',
+            'tanggal_lahir'=> 'required|string|min:8|max:8'
         ]);
 
+        $request->flash();
+
         if ($validator->fails()) {
-            // If validation fails, redirect back to the same page with errors
             return redirect()
                 ->back()
                 ->withErrors($validator)
