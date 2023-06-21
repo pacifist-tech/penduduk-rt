@@ -1,24 +1,28 @@
-
 @extends('layouts.auth')
 
 @section('container')
+    <section class="w-full max-w-md rounded-lg bg-white p-10">
+        <h1 class="text-blue-950 mb-10 text-3xl font-medium">Login</h1>
 
-<section class="p-10 bg-white rounded-lg max-w-md w-full">
-    <h1 class="text-blue-950 text-3xl mb-10 font-medium">Login</h1>
+        <form action="login" class="grid grid-flow-row gap-4" method="POST">
+            @csrf
 
-    <form class=" grid grid-flow-row gap-4" action="login" method="POST">
-        @csrf
-        <div class="flex flex-col">
-            <label class="text-sm text-slate-600 mb-2">Email
-            </label>
-            <input class="border px-3 py-2 rounded-md text-sm" placeholder="contoh@gmail.com" autofocus autocomplete="email">
-        </div>
-        <div class="flex flex-col">
-            <label class="text-sm text-slate-600 mb-2">Password
-            </label>
-            <input class="border px-3 py-2 rounded-md text-sm" placeholder="password" autocomplete="current-password">
-        </div>
-        <button type="submit" class="bg-blue-950 mt-3 text-white w-fit  px-12 py-2 rounded-lg text-sm">Login</button>
-</form>
-</section>
+            @error('email')
+                <span>{{ $message }}</span>
+            @enderror
+            <div class="flex flex-col">
+                <label class="mb-2 text-sm text-slate-600">Email
+                </label>
+                <input autocomplete="email" autofocus class="rounded-md border px-3 py-2 text-sm" name='email'
+                    placeholder="contoh@gmail.com">
+            </div>
+            <div class="flex flex-col">
+                <label class="mb-2 text-sm text-slate-600">Password
+                </label>
+                <input autocomplete="current-password" class="rounded-md border px-3 py-2 text-sm" name='password'
+                    placeholder="password" type='password'>
+            </div>
+            <button class="bg-blue-950 mt-3 w-fit rounded-lg px-12 py-2 text-sm text-white" type="submit">Login</button>
+        </form>
+    </section>
 @endsection

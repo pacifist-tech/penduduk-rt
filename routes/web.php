@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\PostController;
 use App\Models\Post;
@@ -18,18 +19,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return redirect("/penduduk");
+    return redirect('/penduduk');
 });
 
 Route::get('/desa', function () {
     return view('desa');
 });
 Route::get('/penduduk', function () {
-    $penduduk_dummy = [
-        ["nik"=>"3201010101231", "name" => "Ahmad Sobari", "address" => "Jl. Tulung Agung no 6", "jenis_kelamin"=> "Laki-Laki"],
-        ["nik"=>"3201010101233", "name" => "Kevin Sanjaya", "address" => "Jl. Tulung Agung no 7", "jenis_kelamin"=> "Laki-Laki"],
-    ];
-    return view('desa', ["data"=> $penduduk_dummy, 'title' => 'Penduduk', 'menus' => [['label' => 'Tambah', 'color' => 'green', 'href' => '/penduduk/add']]]);
+    $penduduk_dummy = [['nik' => '3201010101231', 'name' => 'Ahmad Sobari', 'address' => 'Jl. Tulung Agung no 6', 'jenis_kelamin' => 'Laki-Laki'], ['nik' => '3201010101233', 'name' => 'Kevin Sanjaya', 'address' => 'Jl. Tulung Agung no 7', 'jenis_kelamin' => 'Laki-Laki']];
+    return view('desa', ['data' => $penduduk_dummy, 'title' => 'Penduduk', 'menus' => [['label' => 'Tambah', 'color' => 'green', 'href' => '/penduduk/add']]]);
 });
 Route::get('/penduduk/add', function () {
     return view('penduduk.add');
@@ -53,7 +51,6 @@ Route::post('/penduduk/add', function (Request $request) {
 
 Route::post('/submit-form', [FormController::class, 'submit'])->name('form.submit');
 
-
 Route::get('/kelahiran', function () {
     return view('kelahiran', ['title' => 'Kelahiran', 'menus' => [['label' => 'Add', 'color' => 'green', 'href' => '/kelahiran/add']]]);
 });
@@ -75,11 +72,11 @@ Route::get('/login', function () {
     return view('login');
 });
 
-Route::post('/login', function () {
-    return redirect('/');
-});
 // ->name('login-form.submit');
 
 Route::get('/register', function () {
     return view('register');
 });
+
+Route::post('/login', [UserController::class, 'login']);
+Route::post('/register', [UserController::class, 'register']);
