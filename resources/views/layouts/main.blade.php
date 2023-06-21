@@ -22,7 +22,7 @@
 
         <section class="grow p-10 overflow-scroll">
             @if (isset($menus))
-                <div class="mb-10">
+                <div class="mb-6">
                     <div class="flex items-center justify-between">
 
                         <form class="flex items-center gap-3 text-sm">
@@ -31,7 +31,7 @@
                         <div class="">
 
                             @foreach ($menus as $menu)
-                                <a class="rounded-md bg-emerald-500 py-2 px-6 text-sm text-white"
+                                <a class="rounded-md bg-emerald-400 hover:bg-emerald-500 font-semibold py-2 px-6 text-sm text-white"
                                     href={{ $menu['href'] }}>{{ $menu['label'] }}</a>
                             @endforeach
                         </div>

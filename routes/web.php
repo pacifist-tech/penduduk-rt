@@ -29,7 +29,7 @@ Route::get('/penduduk', function () {
         ["nik"=>"3201010101231", "name" => "Ahmad Sobari", "address" => "Jl. Tulung Agung no 6", "jenis_kelamin"=> "Laki-Laki"],
         ["nik"=>"3201010101233", "name" => "Kevin Sanjaya", "address" => "Jl. Tulung Agung no 7", "jenis_kelamin"=> "Laki-Laki"],
     ];
-    return view('desa', ["data"=> $penduduk_dummy, 'title' => 'Penduduk', 'menus' => [['label' => 'Add', 'color' => 'green', 'href' => '/penduduk/add']]]);
+    return view('desa', ["data"=> $penduduk_dummy, 'title' => 'Penduduk', 'menus' => [['label' => 'Tambah', 'color' => 'green', 'href' => '/penduduk/add']]]);
 });
 Route::get('/penduduk/add', function () {
     return view('penduduk.add');

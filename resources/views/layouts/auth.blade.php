@@ -9,7 +9,7 @@
 
 </head>
 <body class="font-sans  ">
-    <main class="bg-slate-900 w-full h-screen flex items-center justify-center">
+    <main class="bg-sky-950 w-full h-screen flex items-center justify-center">
     @yield('container')
     </main>
 </body>
