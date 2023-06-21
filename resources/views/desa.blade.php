@@ -18,14 +18,14 @@
                 @foreach ($data as $d)
                     <tr>
                         <td>{{ $d['nik'] }}</td>
-                        <td>{{ $d['name'] }}</td>
-                        <td>{{ $d['address'] }}</td>
-                        <td>{{ $d['jenis_kelamin'] }}</td>
+                        <td>{{ $d['nama_lengkap'] }}</td>
+                        <td>{{ $d['alamat_sebelumnya'] }}</td>
+                        <td>{{ ['Laki-laki', 'Perempuan'][$d['jenis_kelamin'] - 1] }}</td>
 
                         <td class="">
                             <button title='Dokumen'><i
                                     class="bi bi-file-earmark-fill mr-3 text-emerald-400 hover:text-emerald-500"></i></button>
-                            <a href='edit/9'><i class="bi bi-pencil-fill mr-3 text-amber-400 hover:text-amber-500"
+                            <a href="{{'penduduk/edit/'.$d['id']}}"><i class="bi bi-pencil-fill mr-3 text-amber-400 hover:text-amber-500"
                                     title='Edit'></i></a>
                             <button class="openModalButton" onclick="buttonClick('lmao')"><i
                                     class="bi bi-trash-fill text-rose-400 hover:text-rose-500" title='Hapus'></i></button>
