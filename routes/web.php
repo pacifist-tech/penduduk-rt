@@ -18,59 +18,65 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return redirect('/penduduk');
+Route::middleware('auth')->group(function(){
+    Route::get('/', function () {
+        return redirect('/penduduk');
+    });
+    
+    Route::get('/desa', function () {
+        return view('desa');
+    });
+    Route::get('/penduduk', function () {
+        $penduduk_dummy = [['nik' => '3201010101231', 'name' => 'Ahmad Sobari', 'address' => 'Jl. Tulung Agung no 6', 'jenis_kelamin' => 'Laki-Laki'], ['nik' => '3201010101233', 'name' => 'Kevin Sanjaya', 'address' => 'Jl. Tulung Agung no 7', 'jenis_kelamin' => 'Laki-Laki']];
+        return view('desa', ['data' => $penduduk_dummy, 'title' => 'Penduduk', 'menus' => [['label' => 'Tambah', 'color' => 'green', 'href' => '/penduduk/add']]]);
+    });
+    Route::get('/penduduk/add', function () {
+        return view('penduduk.add');
+    });
+    
+    Route::get('/kelahiran/add', function () {
+        return view('kelahiran.kelahiran-add');
+    });
+    
+    Route::get('/kematian/add', function () {
+        return view('kematian.kematian-add');
+    });
+    Route::get('/pindah/add', function () {
+        return view('pindah.add');
+    });
+    
+    Route::post('/penduduk/add', function (Request $request) {
+        $body = $request->body();
+        return redirect('/');
+    });
+    
+    Route::post('/submit-form', [FormController::class, 'submit'])->name('form.submit');
+    
+    Route::get('/kelahiran', function () {
+        return view('kelahiran', ['title' => 'Kelahiran', 'menus' => [['label' => 'Add', 'color' => 'green', 'href' => '/kelahiran/add']]]);
+    });
+    
+    Route::get('/kematian', function () {
+        return view('kematian.index', ['title' => 'Kematian', 'menus' => [['label' => 'Add', 'color' => 'green', 'href' => '/kematian/add']]]);
+    });
+    
+    Route::get('/pindah', function () {
+        return view('pindah.index', ['title' => 'Pindah', 'menus' => [['label' => 'Add', 'color' => 'green', 'href' => '/pindah/add']]]);
+    });
+    Route::get('/datang', function () {
+        return view('datang');
+    });
+    Route::get('/post', [PostController::class, 'index']);
+    Route::get('/post/{slug}', [PostController::class, 'show']);
+
+    Route::post('/logout', [UserController::class, 'logout'])->name('logout');
+
 });
 
-Route::get('/desa', function () {
-    return view('desa');
-});
-Route::get('/penduduk', function () {
-    $penduduk_dummy = [['nik' => '3201010101231', 'name' => 'Ahmad Sobari', 'address' => 'Jl. Tulung Agung no 6', 'jenis_kelamin' => 'Laki-Laki'], ['nik' => '3201010101233', 'name' => 'Kevin Sanjaya', 'address' => 'Jl. Tulung Agung no 7', 'jenis_kelamin' => 'Laki-Laki']];
-    return view('desa', ['data' => $penduduk_dummy, 'title' => 'Penduduk', 'menus' => [['label' => 'Tambah', 'color' => 'green', 'href' => '/penduduk/add']]]);
-});
-Route::get('/penduduk/add', function () {
-    return view('penduduk.add');
-});
-
-Route::get('/kelahiran/add', function () {
-    return view('kelahiran.kelahiran-add');
-});
-
-Route::get('/kematian/add', function () {
-    return view('kematian.kematian-add');
-});
-Route::get('/pindah/add', function () {
-    return view('pindah.add');
-});
-
-Route::post('/penduduk/add', function (Request $request) {
-    $body = $request->body();
-    return redirect('/');
-});
-
-Route::post('/submit-form', [FormController::class, 'submit'])->name('form.submit');
-
-Route::get('/kelahiran', function () {
-    return view('kelahiran', ['title' => 'Kelahiran', 'menus' => [['label' => 'Add', 'color' => 'green', 'href' => '/kelahiran/add']]]);
-});
-
-Route::get('/kematian', function () {
-    return view('kematian.index', ['title' => 'Kematian', 'menus' => [['label' => 'Add', 'color' => 'green', 'href' => '/kematian/add']]]);
-});
-
-Route::get('/pindah', function () {
-    return view('pindah.index', ['title' => 'Pindah', 'menus' => [['label' => 'Add', 'color' => 'green', 'href' => '/pindah/add']]]);
-});
-Route::get('/datang', function () {
-    return view('datang');
-});
-Route::get('/post', [PostController::class, 'index']);
-Route::get('/post/{slug}', [PostController::class, 'show']);
 
 Route::get('/login', function () {
     return view('login');
-});
+})->name('login');
 
 // ->name('login-form.submit');
 

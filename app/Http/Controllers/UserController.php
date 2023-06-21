@@ -61,4 +61,11 @@ class UserController extends Controller
                 ->withInput();
         }
     }
+
+    public function logout(){
+        Auth::logout();
+
+        // Redirect the user to the desired page after logout
+        return redirect('login');
+    }
 }
