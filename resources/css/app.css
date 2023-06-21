@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+td {
+	@apply border px-4 py-2 text-sm max-w-[120px];
+}
+
+tbody {
+	@apply text-slate-600;
+}
+
+thead {
+	@apply uppercase tracking-widest text-slate-800 font-medium;
+}
+
+thead td {
+	@apply py-4;
+}

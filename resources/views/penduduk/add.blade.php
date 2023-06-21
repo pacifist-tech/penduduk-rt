@@ -4,7 +4,7 @@
 @endphp
 
 @section('container')
-    <section class="rounded-2xl bg-white p-6">
+    <section class=" rounded-2xl border bg-white p-6">
         <form action="{{ route('form.submit') }}" class="grid grid-cols-2 gap-6 text-sm" method="POST">
             @csrf
 
@@ -24,8 +24,8 @@
                                 </select>
                             @elseif ($input['type'] == 'textarea')
                                 <textarea autocomplete="{{ Utils::replaceValue($input, 'autocomplete') }}"
-                                    class="{{"rounded-md border py-2 px-3 col-span-2 ". Utils::replaceValue($input, 'class')}}" name="{{ Utils::replaceValue($input, 'name') }}"
-                                    placeholder="{{ Utils::replaceValue($input, 'placeholder') }}" ></textarea>
+                                    class="{{ 'rounded-md border py-2 px-3 col-span-2 ' . Utils::replaceValue($input, 'class') }}"
+                                    name="{{ Utils::replaceValue($input, 'name') }}" placeholder="{{ Utils::replaceValue($input, 'placeholder') }}"></textarea>
                                 @error($input['name'])
                                     <span class="error text-xs text-red-500">{{ $message }}</span>
                                 @enderror

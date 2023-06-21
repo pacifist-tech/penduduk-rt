@@ -1,22 +1,35 @@
 @extends('layouts.main')
 
 @section('container')
-    <div class="grid grid-cols-6">
-        <section></section>
-        <section class="bg-white p-10 rounded-2xl col-span-6">
-            <table class="border">
-                <thead>
+    <section class=" border bg-white rounded-2xl overflow-auto w-full h-full">
+            <table class="stable-fixed w-full h-full border-collapse" >
+                <thead class="font-medium">
                     <tr>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
+                        <td>NIK</td>
+                        <td>Nama</td>
+                        <td>Alamat</td>
+                        <td>Jenis Kelamin</td>
+                        <td>AKSI</td>
                     </tr>
                 </thead>
 
-                <tbody></tbody>
+                <tbody>
+                    <tr>
+                        <td>3201010121921</td>
+                        <td>Ahmad Sobari</td>
+                        <td>Jl. Tulung Agung no 6</td>
+                        <td>Laki-Laki</td>
+                        <td class=""><button><i class="bi bi-pencil-fill text-yellow-500 mr-3"></i></button><button><i class="bi bi-trash-fill text-red-500"></i></button></td>
+                    </tr>
+                    <tr>
+                        <td>3201010121923</td>
+                        <td>Kevin Sanjaya</td>
+                        <td>Jl. Tulung Agung no 6</td>
+                        <td>Laki-Laki</td>
+                    </tr>
+                </tbody>
                 <tfoot></tfoot>
 
             </table>
-        </section>
-    </div>
+    </section>
 @endsection

@@ -1,4 +1,6 @@
 import './bootstrap';
+import '@fortawesome/fontawesome-free/css/all.css';
+
 
 document.addEventListener('DOMContentLoaded', function () {
 flatpickr('#datepicker', {
