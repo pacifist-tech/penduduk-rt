@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Storage;
 
 class ComposerServiceProvider extends ServiceProvider
 {
-    private static $lol = [['label' => 'Pencatatan', 'href' => '/'], ['label' => 'Kelahiran', 'href' => '/kelahiran'], ['label' => 'Kematian', 'href' => '/kematian'], ['label' => 'Perpindahan', 'href' => '/pindah']];
+    private static $lol = [['label' => 'Pencatatan', 'href' => '/',"icon"=> "bi bi-file-earmark-text"], ['label' => 'Kelahiran', 'href' => '/kelahiran', "icon"=> "bi bi-file-earmark-person-fill"], ['label' => 'Kematian', 'href' => '/kematian',"icon"=> "bi-person-x-fill"], ['label' => 'Perpindahan', 'href' => '/pindah', "icon"=> "bi bi-person-lines-fill"]];
 
     private static function penduduk(){
         return self::turnJson('data.json');

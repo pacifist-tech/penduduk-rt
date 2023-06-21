@@ -14,23 +14,19 @@
 
 </head>
 
-<body class="flex font-sans h-full">
+<body class="flex h-full font-sans">
 
     @include('components.sidebar')
-    <main class="w-full bg-slate-50 h-full">
-        <nav class="flex w-full items-center justify-between border-b bg-white py-6 px-10">
-            <h1 class="text-xl font-medium text-slate-900">{{ isset($title) ? $title : '' }}</h1>
-            <div><span class="text-sm text-slate-500">Namanya</span></div>
-        </nav>
+    <main class="flex h-screen w-full flex-col bg-slate-50">
+        @include('components.navbar')
 
-        <section class="p-10">
+        <section class="grow p-10 overflow-scroll">
             @if (isset($menus))
                 <div class="mb-10">
                     <div class="flex items-center justify-between">
 
                         <form class="flex items-center gap-3 text-sm">
-                            <label>Pencarian:</label>
-                            <input class="rounded-md border py-2 px-3 w-96"></input>
+                            <input class="w-96 rounded-md border py-2 px-3"></input>
                         </form>
                         <div class="">
 
@@ -44,7 +40,7 @@
                 </div>
             @endif
             @yield('container')
-        </div>
+            </div>
     </main>
 </body>
 
