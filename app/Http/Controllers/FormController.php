@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Penduduk;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
 
 class FormController extends Controller
@@ -27,7 +28,8 @@ class FormController extends Controller
                 ->withInput();
         } else {
             $validData = $validator->valid();
-            $penduduk = Penduduk::create([
+
+            Penduduk::create([
                 'nama_lengkap'=> $validData['nama_lengkap'],
                 'tempat_lahir'=> $validData['tempat_lahir'],
                 'tanggal_lahir'=> $validData['tanggal_lahir']
@@ -36,5 +38,21 @@ class FormController extends Controller
             
             return redirect('/'); // Replace '/home' with the desired URL or route name
         }
+    }
+
+    public function update(Request $request, $id){
+        $penduduk = Penduduk::findOrFail($id);
+
+        $validator = Validator::make($request->all(), [
+            'nama_lengkap' => 'required|string|max:255',
+            'tempat_lahir'=> 'required|string|max:50',
+            'tanggal_lahir'=> 'required|string|min:8|max:8'
+        ]);
+
+        $validData = $validator->valid();
+        $penduduk->update($validData);
+
+
+        return redirect()->route('penduduk');
     }
 }

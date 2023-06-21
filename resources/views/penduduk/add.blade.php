@@ -4,10 +4,15 @@
 @endphp
 
 @section('container')
-    <section class=" rounded-2xl border bg-white p-6">
-        <form action="{{ route('form.submit') }}" class="grid grid-cols-2 gap-6 text-sm" method="POST">
+    <section class="rounded-2xl border bg-white p-6">
+        <form action="{{ $isEdit ? route('penduduk.edit', $data['id']) : route('form.submit') }}"
+            class="grid grid-cols-2 gap-6 text-sm" method="POST">
             @csrf
+            @method('PUT')
 
+            @if ($isEdit)
+                <input name="_method" type="hidden" value="PUT">
+            @endif
             @if (isset($inputs))
                 @foreach ($inputs as $input)
                     @if ($input['type'] == 'hr')
@@ -32,7 +37,8 @@
                             @else
                                 <input autocomplete="{{ Utils::replaceValue($input, 'autocomplete') }}"
                                     class="rounded-md border py-2 px-3" name="{{ Utils::replaceValue($input, 'name') }}"
-                                    placeholder="{{ Utils::replaceValue($input, 'placeholder') }}" />
+                                    placeholder="{{ Utils::replaceValue($input, 'placeholder') }}"
+                                    value="@if($data)  Utils::replace($data[$input['name']]) @endif" />
                                 @error($input['name'])
                                     <span class="error text-xs text-red-500">{{ $message }}</span>
                                 @enderror
@@ -45,7 +51,8 @@
                 @endforeach
             @endif
 
-            <button class="bg-blue-950 mt-10 rounded-lg py-3 text-white" type='submit'>Simpan</button>
+            <button class="bg-blue-950 mt-10 rounded-lg py-3 text-white"
+                type='submit'>{{ $isEdit ? 'Edit' : 'Simpan' }}</button>
         </form>
     </section>
 @endsection
