@@ -75,6 +75,11 @@ Route::get('/login', function () {
     return view('login');
 });
 
+Route::post('/login', function () {
+    return redirect('/');
+});
+// ->name('login-form.submit');
+
 Route::get('/register', function () {
     return view('register');
 });

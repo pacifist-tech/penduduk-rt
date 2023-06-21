@@ -7,6 +7,7 @@
     <h1 class="text-blue-950 text-3xl mb-10 font-medium">Login</h1>
 
     <form class=" grid grid-flow-row gap-4" action="login" method="POST">
+        @csrf
         <div class="flex flex-col">
             <label class="text-sm text-slate-600 mb-2">Email
             </label>

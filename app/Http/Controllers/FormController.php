@@ -11,7 +11,7 @@ class FormController extends Controller
     public function submit(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'name' => 'required|string|max:255',
+            'nama_lengkap' => 'required|string|max:255',
         ]);
 
         if ($validator->fails()) {
