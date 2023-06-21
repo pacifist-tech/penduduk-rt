@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Penduduk;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -25,7 +26,14 @@ class FormController extends Controller
                 ->withErrors($validator)
                 ->withInput();
         } else {
-            // If validation succeeds, redirect to the home page or a specific route
+            $validData = $validator->valid();
+            $penduduk = Penduduk::create([
+                'nama_lengkap'=> $validData['nama_lengkap'],
+                'tempat_lahir'=> $validData['tempat_lahir'],
+                'tanggal_lahir'=> $validData['tanggal_lahir']
+            ]);
+
+            
             return redirect('/'); // Replace '/home' with the desired URL or route name
         }
     }
