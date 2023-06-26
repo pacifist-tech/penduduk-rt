@@ -1,0 +1,35 @@
+# Ignore vendor directory
+/vendor
+
+# Ignore node_modules directory
+/node_modules
+
+# Ignore any sensitive files or directories
+.env
+.env.*
+.DS_Store
+
+# Ignore Composer related files
+composer.lock
+composer.phar
+
+# Ignore NPM/Yarn related files
+package-lock.json
+yarn.lock
+
+# Ignore PHPUnit related files
+phpunit.xml
+/phpunit.xml
+
+# Ignore any build artifacts
+/public/build
+/public/mix-manifest.json
+/public/css
+/public/js
+
+# Ignore storage logs
+/storage/logs
+
+# Ignore any other unnecessary files or directories
+.git
+.gitignore
