@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="/Users/gregoriomario/Documents/programming/pacifist/pencatatan-desa/phpunit.dusk.xml" tests="8" assertions="11" errors="0" failures="0" skipped="0" time="9.240562">
+    <testsuite name="Browser Test Suite" tests="8" assertions="11" errors="0" failures="0" skipped="0" time="9.240562">
+      <testsuite name="Tests\Browser\AddPendudukTest" file="/Users/gregoriomario/Documents/programming/pacifist/pencatatan-desa/tests/Browser/AddPendudukTest.php" tests="2" assertions="5" errors="0" failures="0" skipped="0" time="3.204156">
+        <testcase name="testCorrectPath" file="/Users/gregoriomario/Documents/programming/pacifist/pencatatan-desa/tests/Browser/AddPendudukTest.php" line="16" class="Tests\Browser\AddPendudukTest" classname="Tests.Browser.AddPendudukTest" assertions="2" time="2.503713"/>
+        <testcase name="testAddPenduduk" file="/Users/gregoriomario/Documents/programming/pacifist/pencatatan-desa/tests/Browser/AddPendudukTest.php" line="35" class="Tests\Browser\AddPendudukTest" classname="Tests.Browser.AddPendudukTest" assertions="3" time="0.700443"/>
+      </testsuite>
+      <testsuite name="Tests\Browser\LoginTest" file="/Users/gregoriomario/Documents/programming/pacifist/pencatatan-desa/tests/Browser/LoginTest.php" tests="2" assertions="2" errors="0" failures="0" skipped="0" time="1.836216">
+        <testcase name="testLoginPage" file="/Users/gregoriomario/Documents/programming/pacifist/pencatatan-desa/tests/Browser/LoginTest.php" line="14" class="Tests\Browser\LoginTest" classname="Tests.Browser.LoginTest" assertions="1" time="1.147403"/>
+        <testcase name="testInputLoginPage" file="/Users/gregoriomario/Documents/programming/pacifist/pencatatan-desa/tests/Browser/LoginTest.php" line="23" class="Tests\Browser\LoginTest" classname="Tests.Browser.LoginTest" assertions="1" time="0.688813"/>
+      </testsuite>
+      <testsuite name="Tests\Browser\LogoutTest" file="/Users/gregoriomario/Documents/programming/pacifist/pencatatan-desa/tests/Browser/LogoutTest.php" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="1.203453">
+        <testcase name="testLogout" file="/Users/gregoriomario/Documents/programming/pacifist/pencatatan-desa/tests/Browser/LogoutTest.php" line="17" class="Tests\Browser\LogoutTest" classname="Tests.Browser.LogoutTest" assertions="1" time="1.203453"/>
+      </testsuite>
+      <testsuite name="Tests\Browser\PendudukTest" file="/Users/gregoriomario/Documents/programming/pacifist/pencatatan-desa/tests/Browser/PendudukTest.php" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="1.450080">
+        <testcase name="testGetPenduduk" file="/Users/gregoriomario/Documents/programming/pacifist/pencatatan-desa/tests/Browser/PendudukTest.php" line="16" class="Tests\Browser\PendudukTest" classname="Tests.Browser.PendudukTest" assertions="1" time="1.450080"/>
+      </testsuite>
+      <testsuite name="Tests\Browser\RegisterTest" file="/Users/gregoriomario/Documents/programming/pacifist/pencatatan-desa/tests/Browser/RegisterTest.php" tests="2" assertions="2" errors="0" failures="0" skipped="0" time="1.546657">
+        <testcase name="testRegisterPage" file="/Users/gregoriomario/Documents/programming/pacifist/pencatatan-desa/tests/Browser/RegisterTest.php" line="18" class="Tests\Browser\RegisterTest" classname="Tests.Browser.RegisterTest" assertions="1" time="0.662023"/>
+        <testcase name="testInputRegisterPage" file="/Users/gregoriomario/Documents/programming/pacifist/pencatatan-desa/tests/Browser/RegisterTest.php" line="27" class="Tests\Browser\RegisterTest" classname="Tests.Browser.RegisterTest" assertions="1" time="0.884635"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testsuites>

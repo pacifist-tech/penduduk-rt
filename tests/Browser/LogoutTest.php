@@ -9,7 +9,6 @@ use Tests\DuskTestCase;
 
 class LogoutTest extends DuskTestCase
 {
-
     use DatabaseMigrations;
     /**
      * A Dusk test example.
@@ -18,20 +17,17 @@ class LogoutTest extends DuskTestCase
     {
         $user = User::factory()->create([
             'email' => 'test@rt.com',
-            'name'=> 'testing',
-            'password'=> 'password',
+            'name' => 'testing',
+            'password' => 'password',
             // 'password_confirmation'=> 'password'
         ]);
 
-
         $this->browse(function (Browser $browser) {
-            $browser->loginAs(User::all()->first())
-                    ->visit('/penduduk')
-                    ->press('Logout')
-                    ->assertPathIs('/login');
+            $browser
+                ->loginAs(User::all()->first())
+                ->visit('/penduduk')
+                ->press('Logout')
+                ->assertPathIs('/login');
         });
-
-
-
     }
 }
