@@ -28,13 +28,13 @@
                         <form class="flex items-center gap-3 text-sm">
                             <input class="w-96 rounded-md border py-2 px-3"></input>
                         </form>
-                        <div class="">
+                        <button class="">
 
                             @foreach ($menus as $menu)
                                 <a class="rounded-md bg-emerald-400 hover:bg-emerald-500 font-semibold py-2 px-6 text-sm text-white"
                                     href={{ $menu['href'] }}>{{ $menu['label'] }}</a>
                             @endforeach
-                        </div>
+                        </button>
 
                     </div>
                 </div>

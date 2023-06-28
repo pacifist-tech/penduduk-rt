@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('penduduk', function (Blueprint $table) {
+        Schema::table('penduduks', function (Blueprint $table) {
             //
             $table->tinyInteger('jenis_kelamin')->default(1)->change();
             $table->tinyInteger('gelar')->default(0)->change();
