@@ -1,7 +1,7 @@
 <sidebar
     class="bg-blue-950 sticky top-0 h-screen w-full max-w-[16rem]  p-10 text-white shadow-md md:max-w-xs flex flex-col justify-between">
     <div>
-            <h1 class="ml-3 text-3xl font-semibold mb-10">RT 06</h1>
+            <h1 class="ml-3 text-3xl font-semibold mb-10">RT 20</h1>
         <ul class="grid gap-1 text-sm">
             @if (isset($menus))
                 @foreach ($menus as $menu)

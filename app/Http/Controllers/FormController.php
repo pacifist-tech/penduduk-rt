@@ -32,7 +32,9 @@ class FormController extends Controller
             Penduduk::create([
                 'nama_lengkap'=> $validData['nama_lengkap'],
                 'tempat_lahir'=> $validData['tempat_lahir'],
-                'tanggal_lahir'=> $validData['tanggal_lahir']
+                'tanggal_lahir'=> $validData['tanggal_lahir'],
+                'alamat_sebelumnya'=> $validData['alamat_sebelumnya'],
+                'nik'=> $validData['nik'],
             ]);
 
             
