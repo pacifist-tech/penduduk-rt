@@ -20,47 +20,47 @@
         <table style="line-height: 1rem" width="100%">
             <tr>
                 <td>Nama Lengkap</td>
-                <td>: {{ $name }}</td>
+                <td>: {{ $nama_lengkap }}</td>
             </tr>
             <tr>
                 <td>Jenis Kelamin</td>
-                <td>: {{ $address }}</td>
+                <td>: {{ $jenis_kelamin }}</td>
             </tr>
             <tr>
                 <td>Gelar</td>
-                <td>: {{ $mobileNumber }}</td>
+                <td>: {{ $gelar }}</td>
             </tr>
             <tr>
                 <td>NIK</td>
-                <td>: {{ $email }}</td>
+                <td>: {{ $nik }}</td>
             </tr>
             <tr>
                 <td>Alamat Sebelumnya</td>
-                <td>: {{ $email }}</td>
+                <td>: {{ $tempat_lahir }}</td>
             </tr>
             <tr>
                 <td>Tanggal Lahir</td>
-                <td>: {{ $email }}</td>
+                <td>: {{ $tanggal_lahir }}</td>
             </tr>
             <tr>
                 <td>Akta Lahir</td>
-                <td>: {{ $email }}</td>
+                <td>: {{ $akta_lahir }}</td>
             </tr>
             <tr>
                 <td>No Akta Lahir</td>
-                <td>: {{ $email }}</td>
+                <td>: {{ $no_akta_lahir }}</td>
             </tr>
             <tr>
                 <td>Golongan Darah</td>
-                <td>: {{ $email }}</td>
+                <td>: {{ $golongan_darah }}</td>
             </tr>
             <tr>
                 <td>Agama</td>
-                <td>: {{ $email }}</td>
+                <td>: {{ $agama }}</td>
             </tr>
             <tr>
                 <td>Status Perkawinan</td>
-                <td>: {{ $email }}</td>
+                <td>: {{ $status_perkawinan }}</td>
             </tr>
         </table>
 

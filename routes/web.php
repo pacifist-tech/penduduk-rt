@@ -28,16 +28,16 @@ Route::middleware('auth')->group(function(){
     Route::get('/desa', function () {
         return view('desa');
     });
-    
-    Route::get('/resume', [PdfGeneratorController::class, 'index']);
+
+    Route::get('/penduduk/file/{id}', [PdfGeneratorController::class, 'index']);
 
     Route::get('/penduduk', function () {
         $penduduk_real = Penduduk::all();
         // echo $penduduk_real;
 
-        $penduduk_dummy = [['nik' => '3201010101231', 'name' => 'Ahmad Sobari', 'address' => 'Jl. Tulung Agung no 6', 'jenis_kelamin' => 'Laki-Laki'], ['nik' => '3201010101233', 'name' => 'Kevin Sanjaya', 'address' => 'Jl. Tulung Agung no 7', 'jenis_kelamin' => 'Laki-Laki']];
         return view('desa', ['data' => $penduduk_real, 'title' => 'Penduduk', 'menus' => [['label' => 'Tambah', 'color' => 'green', 'href' => '/penduduk/add']]]);
     })->name('penduduk');
+
     Route::get('/penduduk/add', function () {
         return view('penduduk.add', ["isEdit"=> false, "data"=> []]);
     });

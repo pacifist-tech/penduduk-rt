@@ -41,7 +41,7 @@
                                 <input autocomplete="{{ Utils::replaceValue($input, 'autocomplete') }}"
                                     class="rounded-md border py-2 px-3" name="{{ Utils::replaceValue($input, 'name') }}"
                                     placeholder="{{ Utils::replaceValue($input, 'placeholder') }}"
-                                    value="@if ($data) Utils::replace($data[$input['name']]) @endif" />
+                                    value="@if ($data) {{Utils::replace($data[$input['name']])}} @endif" />
                                 @error($input['name'])
                                     <span class="error text-xs text-red-500">{{ $message }}</span>
                                 @enderror

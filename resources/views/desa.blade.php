@@ -23,8 +23,8 @@
                         <td>{{ ['Laki-laki', 'Perempuan'][$d['jenis_kelamin'] - 1] }}</td>
 
                         <td class="">
-                            <button title='Dokumen'><i
-                                    class="bi bi-file-earmark-fill mr-3 text-emerald-400 hover:text-emerald-500"></i></button>
+                            <a title='Dokumen' href="{{'penduduk/file/'.$d['id']}}"><i
+                                    class="bi bi-file-earmark-fill mr-3 text-emerald-400 hover:text-emerald-500"></i></a>
                             <a href="{{'penduduk/edit/'.$d['id']}}"><i class="bi bi-pencil-fill mr-3 text-amber-400 hover:text-amber-500"
                                     title='Edit'></i></a>
                             <button class="openModalButton" onclick="buttonClick('lmao')"><i
