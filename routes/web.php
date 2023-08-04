@@ -20,11 +20,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth')->group(function(){
+Route::middleware('auth')->group(function () {
     Route::get('/', function () {
         return redirect('/penduduk');
     });
-    
+
     Route::get('/desa', function () {
         return view('desa');
     });
@@ -39,12 +39,12 @@ Route::middleware('auth')->group(function(){
     })->name('penduduk');
 
     Route::get('/penduduk/add', function () {
-        return view('penduduk.add', ["isEdit"=> false, "data"=> []]);
+        return view('penduduk.add', ['isEdit' => false, 'data' => []]);
     });
 
     Route::get('/penduduk/edit/{id}', function ($id) {
         $penduduk = Penduduk::find($id);
-        return view('penduduk.add', ["data"=> $penduduk, 'isEdit'=> true]);
+        return view('penduduk.add', ['data' => $penduduk, 'isEdit' => true]);
     });
 
     Route::put('/penduduk/edit/{id}', [FormController::class, 'update'])->name('penduduk.edit');
@@ -52,30 +52,29 @@ Route::middleware('auth')->group(function(){
     Route::get('/kelahiran/add', function () {
         return view('kelahiran.kelahiran-add');
     });
-    
+
     Route::get('/kematian/add', function () {
         return view('kematian.kematian-add');
     });
     Route::get('/pindah/add', function () {
         return view('pindah.add');
     });
-    
+
     Route::post('/penduduk/add', function (Request $request) {
         $body = $request->body();
         return redirect('/');
     });
-    
 
     Route::post('/submit-form', [FormController::class, 'submit'])->name('form.submit');
-    
+
     Route::get('/kelahiran', function () {
         return view('kelahiran', ['title' => 'Kelahiran', 'menus' => [['label' => 'Add', 'color' => 'green', 'href' => '/kelahiran/add']]]);
     });
-    
+
     Route::get('/kematian', function () {
         return view('kematian.index', ['title' => 'Kematian', 'menus' => [['label' => 'Add', 'color' => 'green', 'href' => '/kematian/add']]]);
     });
-    
+
     Route::get('/pindah', function () {
         return view('pindah.index', ['title' => 'Pindah', 'menus' => [['label' => 'Add', 'color' => 'green', 'href' => '/pindah/add']]]);
     });
@@ -86,9 +85,7 @@ Route::middleware('auth')->group(function(){
     Route::get('/post/{slug}', [PostController::class, 'show']);
 
     Route::post('/logout', [UserController::class, 'logout'])->name('logout');
-
 });
-
 
 Route::get('/login', function () {
     return view('login');

@@ -11,7 +11,7 @@ class ComposerServiceProvider extends ServiceProvider
     private static $lol = [['label' => 'Pencatatan', 'href' => '/penduduk',"icon"=> "bi bi-file-earmark-text"], ['label' => 'Kelahiran', 'href' => '/kelahiran', "icon"=> "bi bi-file-earmark-person-fill"], ['label' => 'Kematian', 'href' => '/kematian',"icon"=> "bi-person-x-fill"], ['label' => 'Perpindahan', 'href' => '/pindah', "icon"=> "bi bi-person-lines-fill"]];
 
     private static function penduduk(){
-        return self::turnJson('data.json');
+        return self::turnJson('penduduk.json');
     }
 
     private static function kelahiran(){
