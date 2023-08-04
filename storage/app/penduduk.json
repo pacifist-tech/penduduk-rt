@@ -268,34 +268,5 @@
 			{ "label": "88. MENGURUS RUMAH TANGGA", "value": 88 },
 			{ "label": "89. LAINNYA", "value": 89 }
 		]
-	},
-
-	{
-		"type": "hr"
-	},
-	{
-		"type": "text",
-		"label": "NIK Ibu",
-		"name": "nik_ibu",
-		"placeholder": "320210101..."
-	},
-	{
-		"type": "text",
-		"label": "Nama Lengkap Ibu",
-		"name": "nama_ibu",
-		"placeholder": "Ani Suryani"
-	},
-	{
-		"type": "text",
-		"label": "NIK Ayah",
-		"name": "nik_ayah",
-		"placeholder": "320210101..."
-	},
-
-	{
-		"type": "text",
-		"label": "Nama Lengkap AYah",
-		"name": "nama_ayah",
-		"placeholder": "Ani Suryani"
 	}
 ]
