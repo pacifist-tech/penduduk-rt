@@ -23,12 +23,18 @@
                         <td>{{ ['Laki-laki', 'Perempuan'][$d['jenis_kelamin'] - 1] }}</td>
 
                         <td class="">
-                            <a title='Dokumen' href="{{'penduduk/file/'.$d['id']}}"><i
+                            <a href="{{ 'penduduk/file/' . $d['id'] }}" title='Dokumen'><i
                                     class="bi bi-file-earmark-fill mr-3 text-emerald-400 hover:text-emerald-500"></i></a>
-                            <a href="{{'penduduk/edit/'.$d['id']}}"><i class="bi bi-pencil-fill mr-3 text-amber-400 hover:text-amber-500"
-                                    title='Edit'></i></a>
-                            <button class="openModalButton" onclick="buttonClick('lmao')"><i
-                                    class="bi bi-trash-fill text-rose-400 hover:text-rose-500" title='Hapus'></i></button>
+                            @if (auth()->check() &&
+                                    auth()->user()->isAdmin())
+                                <a href="{{ 'penduduk/edit/' . $d['id'] }}"><i
+                                        class="bi bi-pencil-fill mr-3 text-amber-400 hover:text-amber-500"
+                                        title='Edit'></i></a>
+                                <button class="openModalButton" onclick="buttonClick('lmao')"><i
+                                        class="bi bi-trash-fill text-rose-400 hover:text-rose-500"
+                                        title='Hapus'></i></button>
+                            @endif
+
                         </td>
                     </tr>
                 @endforeach
@@ -38,16 +44,16 @@
             <tfoot></tfoot>
 
         </table>
-        <div class="modal fixed top-0 left-0 z-50 h-screen w-screen bg-black bg-opacity-30" id="myModal"
+        <div class="modal fixed left-0 top-0 z-50 h-screen w-screen bg-black bg-opacity-30" id="myModal"
             style="display: none">
             <div class="flex h-full w-full items-center justify-center" onclick="hide()">
                 <div class="modal-content relative max-w-xl rounded-lg bg-white p-10" onclick="stopPropagation(event)">
-                    <button class="close absolute -top-4 -right-4 h-8 w-8 rounded-full bg-white shadow-lg">&times;</button>
+                    <button class="close absolute -right-4 -top-4 h-8 w-8 rounded-full bg-white shadow-lg">&times;</button>
                     <h2 class="text-xl font-medium">Hapus</h2>
                     <p>Apakah anda yakin untuk menghapus?</p>
                     <form action="/penduduk/delete/x" method="POST">
 
-                        <input name='id' value="" class="hidden">
+                        <input class="hidden" name='id' value="">
                         <button class="mt-6 rounded-md bg-red-400 px-6 py-1 font-semibold text-white"
                             type="submit">Hapus</button>
                     </form>

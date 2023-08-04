@@ -16,7 +16,7 @@ class PdfGeneratorController extends Controller
     {
         $penduduk = Penduduk::find($id);
 
-        $jsonData = Storage::get('data.json');
+        $jsonData = Storage::get('penduduk.json');
         $data = json_decode($jsonData, true);
 
         $outputArray = [];
