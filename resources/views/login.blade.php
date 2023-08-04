@@ -2,7 +2,7 @@
 
 @section('container')
     <section class="w-full max-w-md rounded-lg bg-white p-10">
-        <h1 class="text-blue-950 mb-10 text-3xl font-medium">Login</h1>
+        <h1 class="mb-10 text-3xl font-medium text-blue-950">Login</h1>
 
         <form action="login" class="grid grid-flow-row gap-4" method="POST">
             @csrf
@@ -22,7 +22,8 @@
                 <input autocomplete="current-password" class="rounded-md border px-3 py-2 text-sm" name='password'
                     placeholder="password" type='password'>
             </div>
-            <button class="bg-blue-950 mt-3 w-fit rounded-lg px-12 py-2 text-sm text-white" type="submit">Login</button>
+            <button class="mt-3 rounded-lg bg-blue-950 px-12 py-2 text-sm text-white" type="submit">Login</button>
+            <span class="text-sm text-center">Belum punya akun? <strong><a href='/register'>Registrasi</a></strong></span>
         </form>
     </section>
 @endsection

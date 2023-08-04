@@ -7,7 +7,7 @@
         <form action="register" class="grid grid-flow-row gap-4" method="POST">
             @csrf
             <div class="flex flex-col">
-                <label class="mb-2 text-sm text-slate-600">Name
+                <label class="mb-2 text-sm text-slate-600">Nama Lengkap
                 </label>
                 <input autocomplete="name" autofocus class="rounded-md border px-3 py-2 text-sm" name='name'
                     placeholder="Budi setiawan" />
@@ -40,7 +40,9 @@
                 <input autocomplete="new-password" class="rounded-md border px-3 py-2 text-sm"
                     placeholder="konfirmasi password" name='password_confirmation' type='password' />
             </div>
-            <button class="bg-blue-950 mt-3 w-fit rounded-lg px-12 py-2 text-sm text-white" type="submit">Daftar</button>
+            <button class="bg-blue-950 mt-3 rounded-lg px-12 py-2 text-sm text-white" type="submit">Daftar</button>
+            <span class="text-sm text-center">Sudah punya akun? <strong><a href='/login'>Login</a></strong></span>
+
         </form>
     </section>
 @endsection
