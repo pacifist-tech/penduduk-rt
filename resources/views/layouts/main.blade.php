@@ -20,17 +20,18 @@
     <main class="flex h-screen w-full flex-col bg-slate-50">
         @include('components.navbar')
 
-        <section class="grow p-10 overflow-scroll">
+        <section class="grow overflow-scroll p-10">
             @if (isset($menus))
                 <div class="mb-6">
                     <div class="flex items-center justify-between">
 
                         <form class="flex items-center gap-3 text-sm">
-                            <input class="w-96 rounded-md border py-2 px-3"></input>
+                            <input placeholder="Cari berdasar nama..." class="w-96 rounded-md border px-3 py-2" id="search_id" name="search"
+                                onkeyup="handleChange(event)"></input>
                         </form>
                         <button class="">
                             @foreach ($menus as $menu)
-                                <a class="rounded-md bg-emerald-400 hover:bg-emerald-500 font-semibold py-2 px-6 text-sm text-white"
+                                <a class="rounded-md bg-emerald-400 px-6 py-2 text-sm font-semibold text-white hover:bg-emerald-500"
                                     href={{ $menu['href'] }}>{{ $menu['label'] }}</a>
                             @endforeach
                         </button>
@@ -41,6 +42,35 @@
             @yield('container')
             </div>
     </main>
+
 </body>
+
+<script>
+    function handleChange(event) {
+        const value = event.target.value
+        const table = document.getElementById('table');
+        const elements = table.querySelectorAll('.row')
+
+        try {
+            const regex = new RegExp(value);
+            const filteredElements = Array.from(elements).filter(element => !regex.test(element.id));
+
+            elements.forEach(element=>{
+                if(!regex.test(element.id)) element.style.display = 'none'
+                else element.style.display = ''
+            })
+            // Clear previous filtered elements, if any
+            // Add the filtered elements to the container
+            // filteredElements.forEach(element => {
+            //     const clonedElement = element.cloneNode(true);
+            //     clonedElement.classList.add('filtered-element');
+            //     container.appendChild(clonedElement);
+            // });
+        } catch (error) {
+            console.error('Invalid Regular Expression:', error.message);
+        }
+        console.log("WE")
+    }
+</script>
 
 </html>

@@ -3,7 +3,7 @@
 @section('container')
     <section class="w-full overflow-auto rounded-2xl border bg-white">
 
-        <table class="stable-fixed h-full w-full border-collapse">
+        <table id='table' class="stable-fixed h-full w-full border-collapse">
             <thead class="font-medium">
                 <tr>
                     <td>Nama</td>
@@ -16,7 +16,7 @@
 
             <tbody>
                 @foreach ($data as $d)
-                    <tr>
+                    <tr class="row" id="{{ Str::lower($d['nama_lengkap']) }}">
                         <td>{{ $d['nama_lengkap'] }}</td>
                         <td>{{ $d['alamat_asal'] }}</td>
                         <td>{{ $d['alamat_tujuan'] }}</td>
