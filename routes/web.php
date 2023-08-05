@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\KematianController;
 use App\Http\Controllers\PdfGeneratorController;
 use App\Http\Controllers\PostController;
+use App\Models\Kematian;
 use App\Models\Penduduk;
 use App\Models\Post;
 use Illuminate\Http\Client\Request;
@@ -35,8 +37,14 @@ Route::middleware('auth')->group(function () {
         $penduduk_real = Penduduk::all();
         // echo $penduduk_real;
 
-        return view('desa', ['data' => $penduduk_real, 'title' => 'Penduduk', 'menus' => [['label' => 'Tambah', 'color' => 'green', 'href' => '/penduduk/add']]]);
+        return view('penduduk.table', ['data' => $penduduk_real, 'title' => 'Penduduk', 'menus' => [['label' => 'Tambah', 'color' => 'green', 'href' => '/penduduk/add']]]);
     })->name('penduduk');
+
+    Route::get('/kematian', function () {
+        $kematian_all = Kematian::all();
+        // echo $penduduk_real;
+        return view('kematian.table', ['data'=> $kematian_all, 'title' => 'Kematian', 'menus' => [['label' => 'Add', 'color' => 'green', 'href' => '/kematian/add']]]);
+    })->name('kematian');
 
     Route::get('/penduduk/add', function () {
         return view('penduduk.add', ['isEdit' => false, 'data' => []]);
@@ -50,6 +58,7 @@ Route::middleware('auth')->group(function () {
     Route::put('/penduduk/edit/{id}', [FormController::class, 'update'])->name('penduduk.edit');
 
     Route::get('/kelahiran/add', function () {
+
         return view('kelahiran.kelahiran-add');
     });
 
@@ -65,15 +74,14 @@ Route::middleware('auth')->group(function () {
         return redirect('/');
     });
 
+    Route::post('/submit-kematian', [KematianController::class, 'submit'])->name('kematian.submit');
     Route::post('/submit-form', [FormController::class, 'submit'])->name('form.submit');
 
     Route::get('/kelahiran', function () {
         return view('kelahiran', ['title' => 'Kelahiran', 'menus' => [['label' => 'Add', 'color' => 'green', 'href' => '/kelahiran/add']]]);
     });
 
-    Route::get('/kematian', function () {
-        return view('kematian.index', ['title' => 'Kematian', 'menus' => [['label' => 'Add', 'color' => 'green', 'href' => '/kematian/add']]]);
-    });
+   
 
     Route::get('/pindah', function () {
         return view('pindah.index', ['title' => 'Pindah', 'menus' => [['label' => 'Add', 'color' => 'green', 'href' => '/pindah/add']]]);

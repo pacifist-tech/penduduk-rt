@@ -25,7 +25,7 @@
                         <div class="form-group flex flex-col gap-2">
                             <label for="{{ $input['name'] }}">{{ $input['label'] }}</label>
                             @if ($input['type'] == 'select')
-                                <select class="rounded-md border px-3 py-2" placeholder="Jajang Sutisna">
+                                <select class="rounded-md border px-3 py-2" placeholder="Jajang Sutisna" name="{{$input['name']}}">
                                     @foreach ($input['options'] as $option)
                                         <option value="{{ $option['value'] }}">{{ $option['label'] }}</option>
                                     @endforeach

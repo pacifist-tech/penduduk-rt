@@ -5,7 +5,7 @@
 
 @section('container')
     <section class="rounded-2xl bg-white p-6">
-        <form action="{{ route('form.submit') }}" class="grid grid-cols-2 gap-6 text-sm" method="POST">
+        <form action="{{ route('kematian.submit') }}" class="grid grid-cols-2 gap-6 text-sm" method="POST">
             @csrf
 
             @if (isset($inputs))
@@ -17,7 +17,7 @@
                         <div class="form-group flex flex-col gap-2">
                             <label for="{{ $input['name'] }}">{{ $input['label'] }}</label>
                             @if ($input['type'] == 'select')
-                                <select class="rounded-md border py-2 px-3" placeholder="Jajang Sutisna">
+                                <select class="rounded-md border py-2 px-3" placeholder="Jajang Sutisna" name="{{$input['name']}}">
                                     @foreach ($input['options'] as $option)
                                         <option value="{{ $option['value'] }}">{{ $option['label'] }}</option>
                                     @endforeach

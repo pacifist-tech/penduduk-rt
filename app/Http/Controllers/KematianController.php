@@ -5,15 +5,41 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreKematianRequest;
 use App\Http\Requests\UpdateKematianRequest;
 use App\Models\Kematian;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class KematianController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function submit(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'nama_lengkap' => 'required|string|max:255',
+            'tanggal_kematian' => 'required|int',
+            'sebab_kematian' => 'required|int',
+            'tempat_kematian' => 'required|int',
+            'umur' => 'required|int',
+        ]);
+
+        $request->flash();
+
+        if ($validator->fails()) {
+            return redirect()
+                ->back()
+                ->withErrors($validator)
+                ->withInput();
+        } else {
+            $validData = $validator->valid();
+
+
+            unset($validData['_token']);
+            
+            Kematian::create($validData);
+
+            return redirect('/kematian'); // Replace '/home' with the desired URL or route name
+        }
     }
 
     /**
