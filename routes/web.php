@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\KelahiranController;
 use App\Http\Controllers\KematianController;
 use App\Http\Controllers\PdfGeneratorController;
+use App\Http\Controllers\PerpindahanController;
 use App\Http\Controllers\PostController;
 use App\Models\Kelahiran;
 use App\Models\Kematian;
@@ -62,21 +64,27 @@ Route::middleware('auth')->group(function () {
 
 
 
+
+
+    Route::get('/penduduk/edit/{id}', function ($id) {
+        $penduduk = Penduduk::find($id);
+        return view('penduduk.form', ['data' => $penduduk, 'isEdit' => true]);
+    });
+    Route::get('/kelahiran/edit/{id}', function ($id) {
+        $kelahiran = Kelahiran::find($id);
+        return view('kelahiran.form', ['data' => $kelahiran, 'isEdit' => true]);
+    });
+
+    Route::put('/kelahiran/edit/{id}', [KelahiranController::class, 'update'])->name('kelahiran.edit');
+    Route::put('/penduduk/edit/{id}', [FormController::class, 'update'])->name('penduduk.edit');
+    Route::post('/penduduk/delete/{id}', [FormController::class, 'delete'])->name('penduduk.delete');
+
     Route::get('/penduduk/add', function () {
         return view('penduduk.add', ['isEdit' => false, 'data' => []]);
     });
 
-    Route::get('/penduduk/edit/{id}', function ($id) {
-        $penduduk = Penduduk::find($id);
-        return view('penduduk.add', ['data' => $penduduk, 'isEdit' => true]);
-    });
-
-    Route::put('/penduduk/edit/{id}', [FormController::class, 'update'])->name('penduduk.edit');
-    Route::post('/penduduk/delete/{id}', [FormController::class, 'delete'])->name('penduduk.delete');
-
     Route::get('/kelahiran/add', function () {
-
-        return view('kelahiran.kelahiran-add');
+        return view('kelahiran.form');
     });
 
     Route::get('/kematian/add', function () {
@@ -86,17 +94,11 @@ Route::middleware('auth')->group(function () {
         return view('pindah.add');
     });
 
-    Route::post('/penduduk/add', function (Request $request) {
-        $body = $request->body();
-        return redirect('/');
-    });
-
+    Route::post('/submit-perpindahan', [PerpindahanController::class, 'submit'])->name('perpindahan.submit');
+    Route::post('/submit-kelahiran', [KelahiranController::class, 'submit'])->name('kelahiran.submit');
     Route::post('/submit-kematian', [KematianController::class, 'submit'])->name('kematian.submit');
     Route::post('/submit-form', [FormController::class, 'submit'])->name('form.submit');
 
-
-
-   
 
 
     Route::get('/datang', function () {

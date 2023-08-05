@@ -7,9 +7,9 @@
             <thead class="font-medium">
                 <tr>
                     <td>Nama</td>
-                    <td>Tanggal Kematian</td>
+                    <td>Tanggal Lahir</td>
                     <td>Umur</td>
-                    <td>Tempat Kematian</td>
+                    <td>Panjang Bayi</td>
                     <td>Aksi</td>
                 </tr>
             </thead>
@@ -18,16 +18,16 @@
                 @foreach ($data as $d)
                     <tr>
                         <td>{{ $d['nama_lengkap'] }}</td>
-                        <td>{{ $d['tanggal_kematian'] }}</td>
-                        <td>{{ $d['umur'] }}</td>
-                        <td>{{ $d['tempat_kematian']}}</td>
+                        <td>{{ $d['tanggal_lahir'] }}</td>
+                        <td>{{ $d['berat_bayi'] }}</td>
+                        <td>{{ $d['panjang_bayi']}}</td>
 
                         <td class="">
                             <a href="{{ 'kematian/file/' . $d['id'] }}" title='Dokumen'><i
                                     class="bi bi-file-earmark-fill mr-3 text-emerald-400 hover:text-emerald-500"></i></a>
                             @if (auth()->check() &&
                                     auth()->user()->isAdmin())
-                                <a href="{{ 'penduduk/edit/' . $d['id'] }}"><i
+                                <a href="{{ 'kelahiran/edit/' . $d['id'] }}"><i
                                         class="bi bi-pencil-fill mr-3 text-amber-400 hover:text-amber-500"
                                         title='Edit'></i></a>
                                 <button class="openModalButton" onclick="buttonClick('lmao')"><i

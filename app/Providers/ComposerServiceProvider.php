@@ -42,7 +42,7 @@ class ComposerServiceProvider extends ServiceProvider
             $view->with('inputs', self::penduduk());
         });
 
-        View::composer('kelahiran.kelahiran-add', function ($view) {
+        View::composer('kelahiran.form', function ($view) {
             $view->with('inputs', self::kelahiran());
         });
 

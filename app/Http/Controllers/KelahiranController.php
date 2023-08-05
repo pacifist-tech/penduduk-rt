@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreKelahiranRequest;
 use App\Http\Requests\UpdateKelahiranRequest;
 use App\Models\Kelahiran;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class KelahiranController extends Controller
 {
@@ -14,6 +16,33 @@ class KelahiranController extends Controller
     public function index()
     {
         //
+    }
+
+    public function submit(Request $request){
+
+        $validator = Validator::make($request->all(), [
+            'nama_lengkap' => 'required|string|max:255',
+            'tempat_lahir' => 'required|string|max:50',
+            'tanggal_lahir' => 'required|string|max:8|min:8',
+            'berat_bayi' => 'required|numeric',
+            'panjang_bayi' => 'required|numeric',
+        ]);
+
+        $request->flash();
+
+        if ($validator->fails()) {
+            return redirect()
+                ->back()
+                ->withErrors($validator)
+                ->withInput();
+        } else {
+            $validData = $validator->valid();
+
+            unset($validData['_token']);
+            Kelahiran::create($validData);
+
+            return redirect('/kelahiran'); // Replace '/home' with the desired URL or route name
+        }
     }
 
     /**
@@ -51,9 +80,21 @@ class KelahiranController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateKelahiranRequest $request, Kelahiran $kelahiran)
+    public function update(Request $request, $id)
     {
-        //
+        $kelahiran = Kelahiran::findOrFail($id);
+
+        $validator = Validator::make($request->all(), [
+            'nama_lengkap' => 'required|string|max:255',
+            'tempat_lahir' => 'required|string|max:50',
+            'tanggal_lahir' => 'required|string|max:8|min:8',
+            'berat_bayi' => 'required|numeric',
+            'panjang_bayi' => 'required|numeric',
+        ]);
+
+        $validData = $validator->valid();
+        $kelahiran->update($validData);
+        return redirect('/kelahiran');
     }
 
     /**
