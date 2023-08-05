@@ -60,4 +60,11 @@ class FormController extends Controller
 
         return redirect()->route('penduduk');
     }
+
+    public function delete(Request $request, $id){
+        $penduduk = Penduduk::findOrFail($id);
+        $penduduk->delete();
+        return redirect()->route('penduduk');
+
+    }
 }

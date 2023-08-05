@@ -56,6 +56,7 @@ Route::middleware('auth')->group(function () {
     });
 
     Route::put('/penduduk/edit/{id}', [FormController::class, 'update'])->name('penduduk.edit');
+    Route::post('/penduduk/delete/{id}', [FormController::class, 'delete'])->name('penduduk.delete');
 
     Route::get('/kelahiran/add', function () {
 

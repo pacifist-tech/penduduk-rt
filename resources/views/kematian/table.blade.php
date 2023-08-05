@@ -23,7 +23,7 @@
                         <td>{{ $d['tempat_kematian']}}</td>
 
                         <td class="">
-                            <a href="{{ 'penduduk/file/' . $d['id'] }}" title='Dokumen'><i
+                            <a href="{{ 'kematian/file/' . $d['id'] }}" title='Dokumen'><i
                                     class="bi bi-file-earmark-fill mr-3 text-emerald-400 hover:text-emerald-500"></i></a>
                             @if (auth()->check() &&
                                     auth()->user()->isAdmin())
@@ -51,7 +51,7 @@
                     <button class="close absolute -right-4 -top-4 h-8 w-8 rounded-full bg-white shadow-lg">&times;</button>
                     <h2 class="text-xl font-medium">Hapus</h2>
                     <p>Apakah anda yakin untuk menghapus?</p>
-                    <form action="/penduduk/delete/x" method="POST">
+                    <form id='delete-form' action="/penduduk/delete/x" method="POST">
 
                         <input class="hidden" name='id' value="">
                         <button class="mt-6 rounded-md bg-red-400 px-6 py-1 font-semibold text-white"
