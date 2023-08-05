@@ -13,6 +13,17 @@ return new class extends Migration
     {
         Schema::create('kelahirans', function (Blueprint $table) {
             $table->id();
+            $table->string('nama_lengkap', 50);
+            $table->tinyInteger('jenis_kelamin')->default(1)->nullable();
+            $table->string('tempat_lahir', 50)->nullable();
+            $table->string('hari_lahir', 10)->nullable();
+            $table->string('tanggal_lahir', 8)->nullable();
+            $table->string('waktu_lahir', 4)->nullable();
+            $table->tinyInteger('jenis_kelahiran')->default(1)->nullable();
+            $table->tinyInteger('kelahiran_ke')->default(1)->nullable();
+            $table->tinyInteger('penolong_kelahiran')->default(1)->nullable();
+            $table->float('berat_bayi')->nullable();
+            $table->float('panjang_bayi')->nullable();
             $table->timestamps();
         });
     }
