@@ -33,9 +33,8 @@ class KematianController extends Controller
         } else {
             $validData = $validator->valid();
 
-
             unset($validData['_token']);
-            
+
             Kematian::create($validData);
 
             return redirect('/kematian'); // Replace '/home' with the desired URL or route name
@@ -77,7 +76,7 @@ class KematianController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request,  $id)
+    public function update(Request $request, $id)
     {
         $kematian = Kematian::findOrFail($id);
 
@@ -101,5 +100,12 @@ class KematianController extends Controller
     public function destroy(Kematian $kematian)
     {
         //
+    }
+
+    public function delete(Request $request, $id)
+    {
+        $kematian = Kematian::findOrFail($id);
+        $kematian->delete();
+        return redirect()->route('kematian');
     }
 }

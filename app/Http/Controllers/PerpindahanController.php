@@ -108,4 +108,10 @@ class PerpindahanController extends Controller
     {
         //
     }
+    public function delete(Request $request, $id)
+    {
+        $perpindahan = Perpindahan::findOrFail($id);
+        $perpindahan->delete();
+        return redirect()->route('pindah');
+    }
 }

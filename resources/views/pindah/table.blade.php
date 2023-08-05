@@ -30,7 +30,7 @@
                                 <a href="{{ 'pindah/edit/' . $d['id'] }}"><i
                                         class="bi bi-pencil-fill mr-3 text-amber-400 hover:text-amber-500"
                                         title='Edit'></i></a>
-                                <button class="openModalButton" onclick="buttonClick('lmao')"><i
+                                <button class="openModalButton" onclick="buttonClick({{ $d['id'] }})"><i
                                         class="bi bi-trash-fill text-rose-400 hover:text-rose-500"
                                         title='Hapus'></i></button>
                             @endif
@@ -50,7 +50,8 @@
                     <button class="close absolute -right-4 -top-4 h-8 w-8 rounded-full bg-white shadow-lg">&times;</button>
                     <h2 class="text-xl font-medium">Hapus</h2>
                     <p>Apakah anda yakin untuk menghapus?</p>
-                    <form id='delete-form' action="/penduduk/delete/x" method="POST">
+                    <form id='delete-form' action="/pindah/delete/x" method="POST">
+                        @csrf
 
                         <input class="hidden" name='id' value="">
                         <button class="mt-6 rounded-md bg-red-400 px-6 py-1 font-semibold text-white"
@@ -77,7 +78,7 @@
 
             function buttonClick(message) {
                 document.getElementById("myModal").style.display = "block";
-                console.log(message)
+                document.getElementById("delete-form").action = "/pindah/delete/" + message;
 
             }
         </script>

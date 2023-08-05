@@ -44,29 +44,32 @@ Route::middleware('auth')->group(function () {
         return view('penduduk.table', ['data' => $penduduk_real, 'title' => 'Penduduk', 'menus' => [['label' => 'Tambah', 'color' => 'green', 'href' => '/penduduk/add']]]);
     })->name('penduduk');
 
+
+    Route::get('/kelahiran', function () {
+        $kelahiran_all = Kelahiran::all();
+
+        return view('kelahiran.table', ['data'=> $kelahiran_all, 'title' => 'Kelahiran', 'menus' => [['label' => 'Tambah', 'color' => 'green', 'href' => '/kelahiran/add']]]);
+    })->name('kelahiran');
+
     Route::get('/kematian', function () {
         $kematian_all = Kematian::all();
         // echo $penduduk_real;
         return view('kematian.table', ['data'=> $kematian_all, 'title' => 'Kematian', 'menus' => [['label' => 'Tambah', 'color' => 'green', 'href' => '/kematian/add']]]);
     })->name('kematian');
 
-    Route::get('/kelahiran', function () {
-        $kelahiran_all = Kelahiran::all();
-
-        return view('kelahiran.table', ['data'=> $kelahiran_all, 'title' => 'Kelahiran', 'menus' => [['label' => 'Tambah', 'color' => 'green', 'href' => '/kelahiran/add']]]);
-    });
 
     Route::get('/pindah', function () {
         $perpindahan_all = Perpindahan::all();
 
         return view('pindah.table', ['data'=> $perpindahan_all, 'title' => 'Pindah', 'menus' => [['label' => 'Add', 'color' => 'green', 'href' => '/pindah/add']]]);
-    });
+    })->name('pindah');
 
 
     Route::get('/penduduk/edit/{id}', function ($id) {
         $penduduk = Penduduk::find($id);
         return view('penduduk.form', ['data' => $penduduk, 'isEdit' => true]);
     });
+
     Route::get('/kelahiran/edit/{id}', function ($id) {
         $kelahiran = Kelahiran::find($id);
         return view('kelahiran.form', ['data' => $kelahiran, 'isEdit' => true]);
@@ -88,6 +91,9 @@ Route::middleware('auth')->group(function () {
     Route::put('/pindah/edit/{id}', [PerpindahanController::class, 'update'])->name('pindah.edit');
     
     Route::post('/penduduk/delete/{id}', [FormController::class, 'delete'])->name('penduduk.delete');
+    Route::post('/kelahiran/delete/{id}', [KelahiranController::class, 'delete'])->name('kelahiran.delete');
+    Route::post('/kematian/delete/{id}', [KematianController::class, 'delete'])->name('kematian.delete');
+    Route::post('/pindah/delete/{id}', [PerpindahanController::class, 'delete'])->name('pindah.delete');
 
     Route::get('/penduduk/add', function () {
         return view('penduduk.add', ['isEdit' => false, 'data' => []]);
@@ -111,10 +117,6 @@ Route::middleware('auth')->group(function () {
     Route::post('/submit-form', [FormController::class, 'submit'])->name('form.submit');
 
 
-
-    Route::get('/datang', function () {
-        return view('datang');
-    });
     Route::get('/post', [PostController::class, 'index']);
     Route::get('/post/{slug}', [PostController::class, 'show']);
 

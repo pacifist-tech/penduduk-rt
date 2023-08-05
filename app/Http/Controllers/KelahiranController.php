@@ -102,6 +102,13 @@ class KelahiranController extends Controller
      */
     public function destroy(Kelahiran $kelahiran)
     {
-        //
+        
+    }
+
+    public function delete(Request $request, $id){
+        $kelahiran = Kelahiran::findOrFail($id);
+        $kelahiran->delete();
+        return redirect()->route('kelahiran');
+
     }
 }
