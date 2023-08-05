@@ -35,7 +35,6 @@ Route::middleware('auth')->group(function () {
         return view('desa');
     });
 
-    Route::get('/penduduk/file/{id}', [PdfGeneratorController::class, 'index']);
 
     Route::get('/penduduk', function () {
         $penduduk_real = Penduduk::all();
@@ -84,6 +83,11 @@ Route::middleware('auth')->group(function () {
         $perpindahan = Perpindahan::find($id);
         return view('pindah.form', ['data' => $perpindahan, 'isEdit' => true]);
     });
+
+    Route::get('/penduduk/file/{id}', [PdfGeneratorController::class, 'index']);
+    Route::get('/kelahiran/file/{id}', [PdfGeneratorController::class, 'kelahiran']);
+    Route::get('/kematian/file/{id}', [PdfGeneratorController::class, 'kematian']);
+    Route::get('/pindah/file/{id}', [PdfGeneratorController::class, 'pindah']);
 
     Route::put('/kematian/edit/{id}', [KematianController::class, 'update'])->name('kematian.edit');
     Route::put('/kelahiran/edit/{id}', [KelahiranController::class, 'update'])->name('kelahiran.edit');

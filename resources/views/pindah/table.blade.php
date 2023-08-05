@@ -23,7 +23,7 @@
                         <td>{{ $d['rencana_tanggal_pindah']}}</td>
 
                         <td class="">
-                            <a href="{{ 'kematian/file/' . $d['id'] }}" title='Dokumen'><i
+                            <a href="{{ 'pindah/file/' . $d['id'] }}" title='Dokumen'><i
                                     class="bi bi-file-earmark-fill mr-3 text-emerald-400 hover:text-emerald-500"></i></a>
                             @if (auth()->check() &&
                                     auth()->user()->isAdmin())
