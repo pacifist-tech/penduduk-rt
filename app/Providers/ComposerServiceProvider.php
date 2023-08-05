@@ -46,11 +46,11 @@ class ComposerServiceProvider extends ServiceProvider
             $view->with('inputs', self::kelahiran());
         });
 
-        View::composer('kematian.kematian-add', function ($view) {
+        View::composer('kematian.form', function ($view) {
             $view->with('inputs', self::kematian());
         });
 
-        View::composer('pindah.add', function ($view) {
+        View::composer('pindah.form', function ($view) {
             $view->with('inputs', self::pindah());
         });
     }

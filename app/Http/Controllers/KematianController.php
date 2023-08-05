@@ -77,8 +77,21 @@ class KematianController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateKematianRequest $request, Kematian $kematian)
+    public function update(Request $request,  $id)
     {
+        $kematian = Kematian::findOrFail($id);
+
+        $validator = Validator::make($request->all(), [
+            'nama_lengkap' => 'required|string|max:255',
+            'tanggal_kematian' => 'required|int',
+            'sebab_kematian' => 'required|int',
+            'tempat_kematian' => 'required|int',
+            'umur' => 'required|int',
+        ]);
+
+        $validData = $validator->valid();
+        $kematian->update($validData);
+        return redirect('/kematian');
         //
     }
 

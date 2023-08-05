@@ -63,9 +63,6 @@ Route::middleware('auth')->group(function () {
     });
 
 
-
-
-
     Route::get('/penduduk/edit/{id}', function ($id) {
         $penduduk = Penduduk::find($id);
         return view('penduduk.form', ['data' => $penduduk, 'isEdit' => true]);
@@ -75,8 +72,16 @@ Route::middleware('auth')->group(function () {
         return view('kelahiran.form', ['data' => $kelahiran, 'isEdit' => true]);
     });
 
+    Route::get('/kematian/edit/{id}', function ($id) {
+        $kematian = Kematian::find($id);
+        return view('kematian.form', ['data' => $kematian, 'isEdit' => true]);
+    });
+
+    Route::put('/kematian/edit/{id}', [KematianController::class, 'update'])->name('kematian.edit');
     Route::put('/kelahiran/edit/{id}', [KelahiranController::class, 'update'])->name('kelahiran.edit');
     Route::put('/penduduk/edit/{id}', [FormController::class, 'update'])->name('penduduk.edit');
+    Route::put('/pindah/edit/{id}', [PerpindahanController::class, 'update'])->name('perpindahan.edit');
+    
     Route::post('/penduduk/delete/{id}', [FormController::class, 'delete'])->name('penduduk.delete');
 
     Route::get('/penduduk/add', function () {
@@ -84,14 +89,15 @@ Route::middleware('auth')->group(function () {
     });
 
     Route::get('/kelahiran/add', function () {
-        return view('kelahiran.form');
+        return view('kelahiran.form', ['isEdit' => false, 'data' => []]);
     });
 
     Route::get('/kematian/add', function () {
-        return view('kematian.kematian-add');
+        return view('kematian.form', ['isEdit' => false, 'data' => []]);
     });
+
     Route::get('/pindah/add', function () {
-        return view('pindah.add');
+        return view('pindah.form', ['isEdit' => false, 'data' => []]);
     });
 
     Route::post('/submit-perpindahan', [PerpindahanController::class, 'submit'])->name('perpindahan.submit');

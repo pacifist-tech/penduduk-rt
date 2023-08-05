@@ -27,7 +27,7 @@
                                     class="bi bi-file-earmark-fill mr-3 text-emerald-400 hover:text-emerald-500"></i></a>
                             @if (auth()->check() &&
                                     auth()->user()->isAdmin())
-                                <a href="{{ 'penduduk/edit/' . $d['id'] }}"><i
+                                <a href="{{ 'kematian/edit/' . $d['id'] }}"><i
                                         class="bi bi-pencil-fill mr-3 text-amber-400 hover:text-amber-500"
                                         title='Edit'></i></a>
                                 <button class="openModalButton" onclick="buttonClick('lmao')"><i
