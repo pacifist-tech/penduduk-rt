@@ -5,7 +5,7 @@
 
 @section('container')
     <section class="rounded-2xl border bg-white p-6">
-        <form action="{{ $isEdit ? route('perpindahan.edit', $data['id']) : route('perpindahan.submit') }}"
+        <form action="{{ $isEdit ? route('pindah.edit', $data['id']) : route('pindah.submit') }}"
             class="grid grid-cols-2 gap-6 text-sm" method="POST">
             @csrf
             @if ($isEdit)

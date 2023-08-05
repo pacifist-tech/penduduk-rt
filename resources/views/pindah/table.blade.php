@@ -7,9 +7,9 @@
             <thead class="font-medium">
                 <tr>
                     <td>Nama</td>
-                    <td>Tanggal Kematian</td>
-                    <td>Umur</td>
-                    <td>Tempat Kematian</td>
+                    <td>Alamat Asal</td>
+                    <td>Alamat Tujuan</td>
+                    <td>Tanggal Perpindahan</td>
                     <td>Aksi</td>
                 </tr>
             </thead>
@@ -18,23 +18,22 @@
                 @foreach ($data as $d)
                     <tr>
                         <td>{{ $d['nama_lengkap'] }}</td>
-                        <td>{{ $d['tanggal_kematian'] }}</td>
-                        <td>{{ $d['umur'] }}</td>
-                        <td>{{ $d['tempat_kematian']}}</td>
+                        <td>{{ $d['alamat_asal'] }}</td>
+                        <td>{{ $d['alamat_tujuan'] }}</td>
+                        <td>{{ $d['rencana_tanggal_pindah']}}</td>
 
                         <td class="">
                             <a href="{{ 'kematian/file/' . $d['id'] }}" title='Dokumen'><i
                                     class="bi bi-file-earmark-fill mr-3 text-emerald-400 hover:text-emerald-500"></i></a>
                             @if (auth()->check() &&
                                     auth()->user()->isAdmin())
-                                <a href="{{ 'penduduk/edit/' . $d['id'] }}"><i
+                                <a href="{{ 'pindah/edit/' . $d['id'] }}"><i
                                         class="bi bi-pencil-fill mr-3 text-amber-400 hover:text-amber-500"
                                         title='Edit'></i></a>
                                 <button class="openModalButton" onclick="buttonClick('lmao')"><i
                                         class="bi bi-trash-fill text-rose-400 hover:text-rose-500"
                                         title='Hapus'></i></button>
                             @endif
-
                         </td>
                     </tr>
                 @endforeach
