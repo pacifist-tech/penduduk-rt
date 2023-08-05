@@ -5,8 +5,10 @@ use App\Http\Controllers\FormController;
 use App\Http\Controllers\KematianController;
 use App\Http\Controllers\PdfGeneratorController;
 use App\Http\Controllers\PostController;
+use App\Models\Kelahiran;
 use App\Models\Kematian;
 use App\Models\Penduduk;
+use App\Models\Perpindahan;
 use App\Models\Post;
 use Illuminate\Http\Client\Request;
 use Illuminate\Support\Facades\Route;
@@ -43,8 +45,22 @@ Route::middleware('auth')->group(function () {
     Route::get('/kematian', function () {
         $kematian_all = Kematian::all();
         // echo $penduduk_real;
-        return view('kematian.table', ['data'=> $kematian_all, 'title' => 'Kematian', 'menus' => [['label' => 'Add', 'color' => 'green', 'href' => '/kematian/add']]]);
+        return view('kematian.table', ['data'=> $kematian_all, 'title' => 'Kematian', 'menus' => [['label' => 'Tambah', 'color' => 'green', 'href' => '/kematian/add']]]);
     })->name('kematian');
+
+    Route::get('/kelahiran', function () {
+        $kelahiran_all = Kelahiran::all();
+
+        return view('kelahiran.table', ['data'=> $kelahiran_all, 'title' => 'Kelahiran', 'menus' => [['label' => 'Tambah', 'color' => 'green', 'href' => '/kelahiran/add']]]);
+    });
+
+    Route::get('/pindah', function () {
+        $perpindahan_all = Perpindahan::all();
+
+        return view('pindah.table', ['data'=> $perpindahan_all, 'title' => 'Pindah', 'menus' => [['label' => 'Add', 'color' => 'green', 'href' => '/pindah/add']]]);
+    });
+
+
 
     Route::get('/penduduk/add', function () {
         return view('penduduk.add', ['isEdit' => false, 'data' => []]);
@@ -78,15 +94,11 @@ Route::middleware('auth')->group(function () {
     Route::post('/submit-kematian', [KematianController::class, 'submit'])->name('kematian.submit');
     Route::post('/submit-form', [FormController::class, 'submit'])->name('form.submit');
 
-    Route::get('/kelahiran', function () {
-        return view('kelahiran', ['title' => 'Kelahiran', 'menus' => [['label' => 'Add', 'color' => 'green', 'href' => '/kelahiran/add']]]);
-    });
+
 
    
 
-    Route::get('/pindah', function () {
-        return view('pindah.index', ['title' => 'Pindah', 'menus' => [['label' => 'Add', 'color' => 'green', 'href' => '/pindah/add']]]);
-    });
+
     Route::get('/datang', function () {
         return view('datang');
     });
