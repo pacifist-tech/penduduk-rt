@@ -53,6 +53,8 @@ class FormController extends Controller
 
         $validData = $validator->valid();
 
+        // dd($validData);
+
         $penduduk->update($validData);
 
 

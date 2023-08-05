@@ -6,6 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Penduduk extends Model
 {
-    protected $fillable = ['nama_lengkap', 'nik', 'alamat_sebelumnya'];
+    protected $fillable = ['nik', 'tempat_lahir', 'alamat_sebelumnya'];
 
 }
