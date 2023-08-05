@@ -7,7 +7,7 @@
 
 <head>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-    <title>Kelahiran {{$data['nama_lengkap']}}</title>
+    <title>Kematian {{$data['nama_lengkap']}}</title>
 </head>
 
 <body style="line-height: 2rem">

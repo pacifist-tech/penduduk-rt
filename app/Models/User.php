@@ -40,4 +40,7 @@ class User extends Authenticatable
     {
         return $this->is_admin;
     }
+    public function getName(){
+        return $this->name;
+    }
 }

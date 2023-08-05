@@ -7,7 +7,7 @@
                 @foreach ($menus as $menu)
                     <a href={{ $menu['href'] }}>
                         <li
-                            class="rounded-md py-3 px-3 pr-12  duration-300 hover:bg-blue-900 hover:font-medium hover:text-white @if (str_contains(request()->path(), substr($menu['href'], 1))) font-medium text-white bg-blue-900 @else text-slate-400 @endif">
+                            class="rounded-md py-3 px-3 pr-12  duration-300 hover:bg-blue-900 hover:font-medium hover:text-white @if (str_contains(request()->path(), substr($menu['href'], 1))) font-medium  bg-blue-900 @else text-slate-400 @endif">
                             <i class="{{ $menu['icon'] }} mr-3"></i><span>{{ $menu['label'] }}</span>
                         </li>
                     </a>
