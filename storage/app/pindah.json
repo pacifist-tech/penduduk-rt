@@ -17,7 +17,7 @@
 		"type": "text",
 		"label": "Nama Lengkap Pemohon",
 		"description": "Nama Lengkap Sesuai Akta Kelahiran",
-		"name": "name",
+		"name": "nama_lengkap",
 		"placeholder": "Asep Surasep",
 		"autocomplete": "name"
 	},
@@ -40,7 +40,7 @@
 	{
 		"type": "select",
 		"label": "Klasifikasi Kepindahan",
-		"name": "klasifikasi_kepindahan",
+		"name": "klasifikasi_perpindahan",
 		"options": [
 			{
 				"label": "01. Datam satu desa/kelurahan atau yang disebut dengan nama lain",
@@ -73,106 +73,12 @@
 		"placeholder": "Gg. Nangka No 5"
 	},
 	{
-		"type": "number",
-		"label": "RT",
-		"name": "alamat_asal_rt",
-		"description": "Rukun Tetangga",
-		"placeholder": "08"
-	},
-	{
-		"type": "number",
-		"label": "RW",
-		"name": "alamat_asal_rw",
-		"description": "Rukun Warga",
-		"placeholder": "08"
-	},
-	{
-		"type": "text",
-		"label": "Desa/Kelurahan",
-		"name": "alamat_asal_desa",
-		"placeholder": "Desa Sukamaju"
-	},
-	{
-		"type": "text",
-		"label": "Kecamatan",
-		"name": "alamat_asal_kecamatan",
-		"placeholder": "Kecamatan Hilir"
-	},
-	{
-		"type": "text",
-		"label": "Kabupaten/Kota",
-		"name": "alamat_asal_kabupaten",
-		"placeholder": "Kabupaten Bogor"
-	},
-	{
-		"type": "text",
-		"label": "Provinsi",
-		"name": "alamat_asal_provinsi",
-		"placeholder": "Jawa Barat"
-	},
-	{
-		"type": "number",
-		"label": "Kode POS",
-		"name": "alamat_asal_kode_pos",
-		"placeholder": "16916",
-		"autocomplete": "zip"
-	},
-	{
-		"type": "hr"
-	},
-	{
 		"type": "text",
 		"label": "Alamat Tujuan",
 		"name": "alamat_tujuan",
 		"description": "Alamat tempat tinggal tujuan",
 		"placeholder": "Gg. Nangka No 5"
 	},
-	{
-		"type": "number",
-		"label": "RT",
-		"name": "alamat_tujuan_rt",
-		"description": "Rukun Tetangga",
-		"placeholder": "08"
-	},
-	{
-		"type": "number",
-		"label": "RW",
-		"name": "alamat_tujuan_rw",
-		"description": "Rukun Warga",
-		"placeholder": "08"
-	},
-	{
-		"type": "text",
-		"label": "Desa/Kelurahan",
-		"name": "alamat_tujuan_desa",
-		"placeholder": "Desa Sukamaju"
-	},
-	{
-		"type": "text",
-		"label": "Kecamatan",
-		"name": "alamat_tujuan_kecamatan",
-		"placeholder": "Kecamatan Hilir"
-	},
-	{
-		"type": "text",
-		"label": "Kabupaten/Kota",
-		"name": "alamat_tujuan_kabupaten",
-		"placeholder": "Kabupaten Bogor"
-	},
-	{
-		"type": "text",
-		"label": "Provinsi",
-		"name": "alamat_tujuan_provinsi",
-		"placeholder": "Jawa Barat"
-	},
-	{
-		"type": "number",
-		"label": "Kode POS",
-		"name": "alamat_tujuan_kode_pos",
-		"placeholder": "16916",
-		"autocomplete": "zip"
-	},
-
 	{
 		"type": "select",
 		"label": "Alasan Pindah",
@@ -254,20 +160,6 @@
 		"name": "tanggal_kitas",
 		"placeholder": "230623",
 		"description": "format DDMMYY"
-	},
-	{ "type": "hr" },
-
-	{
-		"type": "text",
-		"label": "Negara Tujuan",
-		"name": "nama_negara_tujuan",
-		"placeholder": "Amerika Serikat"
-	},
-	{
-		"type": "text",
-		"label": "Alamat Negara Tujuan",
-		"name": "alamat_negara_tujuan",
-		"placeholder": "Regent Park No. 1, UK"
 	},
 	{
 		"type": "text",

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('nama_lengkap', 50);
             $table->tinyInteger('jenis_kelamin')->nullable();
             $table->string('tempat_lahir', 50)->nullable();
-            $table->string('hari_lahir', 10)->nullable();
+            // $table->string('hari_lahir', 10)->nullable();
             $table->string('tanggal_lahir', 8)->nullable();
             $table->tinyInteger('umur');
             $table->tinyInteger('agama')->nullable();
