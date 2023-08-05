@@ -38,7 +38,7 @@ class ComposerServiceProvider extends ServiceProvider
             $view->with('menus', self::$lol);
         });
 
-        View::composer('penduduk.add', function ($view) {
+        View::composer('penduduk.form', function ($view) {
             $view->with('inputs', self::penduduk());
         });
 

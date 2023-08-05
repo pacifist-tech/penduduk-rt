@@ -31,8 +31,17 @@
                         </form>
                         <button class="">
                             @foreach ($menus as $menu)
-                                <a class="rounded-md bg-emerald-400 px-6 py-2 text-sm font-semibold text-white hover:bg-emerald-500"
-                                    href={{ $menu['href'] }}>{{ $menu['label'] }}</a>
+                            
+                            @if ($menu["label"] == "Download")
+                            <a class="rounded-md bg-sky-400 px-6 py-2 text-sm font-semibold text-white hover:bg-sky-500"
+                            href={{ $menu['href'] }}><i class="bi bi-file-earmark-arrow-down-fill"></i>
+                            {{ $menu['label'] }}</a>
+                            @else
+                            <a class="rounded-md bg-emerald-400 px-6 py-2 text-sm font-semibold text-white hover:bg-emerald-500"
+                            href={{ $menu['href'] }}><i class="bi bi-file-earmark-plus-fill"></i>
+                            {{ $menu['label'] }}</a>
+                            @endif
+                                
                             @endforeach
                         </button>
 

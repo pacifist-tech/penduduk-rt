@@ -95,6 +95,38 @@ class PdfGeneratorController extends Controller
         $pdf = FacadePdf::loadView('pindah.document', ["data"=> $mappedArray]);
         return $pdf->stream('pindah.pdf');
     }
+    public function pendudukAll()
+    {
+        $penduduk = Penduduk::all();
+        $headers = array_keys($penduduk->first()->getAttributes());
+
+        $pdf = FacadePdf::loadView('penduduk.all', ["data"=> $penduduk->toArray(), "header"=> $headers])->setPaper('a4', 'landscape');;
+        return $pdf->stream('penduduk.pdf');
+    }
+    public function kelahiranAll()
+    {
+        $kelahiran = Kelahiran::all();
+        $headers = array_keys($kelahiran->first()->getAttributes());
+
+        $pdf = FacadePdf::loadView('kelahiran.all', ["data"=> $kelahiran->toArray(), "header"=> $headers])->setPaper('a4', 'landscape');;
+        return $pdf->stream('kelahiran.pdf');
+    }
+    public function kematianAll()
+    {
+        $kematian = Kematian::all();
+        $headers = array_keys($kematian->first()->getAttributes());
+
+        $pdf = FacadePdf::loadView('kematian.all', ["data"=> $kematian->toArray(), "header"=> $headers])->setPaper('a4', 'landscape');;
+        return $pdf->stream('kematian.pdf');
+    }
+    public function pindahAll()
+    {
+        $perpindahan = Perpindahan::all();
+        $headers = array_keys($perpindahan->first()->getAttributes());
+
+        $pdf = FacadePdf::loadView('pindah.all', ["data"=> $perpindahan->toArray(), "header"=> $headers])->setPaper('a4', 'landscape');;
+        return $pdf->stream('perpindahan.pdf');
+    }
 
 
     private function turnToArr($data, $record){
